@@ -8,7 +8,7 @@
   <meta property="og:title" content="The Vault Investigates" />
   <meta property="og:description" content="Following the money behind the business of poverty. US · Puerto Rico · Philippines." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://vault.povertypimpslayerthevault.io" />
+  <meta property="og:url" content="https://truthdrop.io" />
   <meta name="theme-color" content="#0D0B09" />
 
   <!-- Google Fonts -->
@@ -20,18 +20,20 @@
 </head>
 <body>
 
+  <!-- Skip Navigation -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- ============================================================
        ALERT RAIL
        SWAP: Activate when first DOJ scanner results publish.
-       Uncomment the block below, update copy and link.
+       Remove the HTML comment and uncomment the element below.
+       Update copy with investigation title and correct link.
   ============================================================ -->
   <!--
   <div class="alert-rail" role="alert">
     <p class="alert-rail__text container">
       NEW REGISTRY ENTRY — [Investigation Title] now published.
-      <a href="registry.html">Enter the file →</a>
+      <a href="/registry.html">Enter the file →</a>
     </p>
   </div>
   -->
@@ -41,20 +43,25 @@
     <div class="container nav__inner">
       <a href="index.html" class="nav__brand" aria-label="The Vault Investigates — Home">
         <span class="nav__brand-name">The Vault Investigates</span>
-        <span class="nav__brand-sub">vault.povertypimpslayerthevault.io</span>
+        <span class="nav__brand-sub">truthdrop.io</span>
       </a>
 
+      <!-- Desktop links -->
       <ul class="nav__links" role="list">
         <li><a href="registry.html" class="nav__link">Registry</a></li>
         <li><a href="about.html" class="nav__link">About</a></li>
         <li><a href="apply.html" class="nav__link">Research Access</a></li>
         <li><a href="support.html" class="nav__link">Support</a></li>
-        <!-- SWAP: Update Substack link with live URL once confirmed -->
-        <li><a href="https://thevaultinvestigates.cloud" class="nav__link" target="_blank" rel="noopener noreferrer">Substack</a></li>
+        <li>
+          <!-- SWAP: Update Substack link with live URL once confirmed -->
+          <a href="https://thevaultinvestigates.cloud" class="nav__link" target="_blank" rel="noopener">Substack</a>
+        </li>
       </ul>
 
+      <!-- CTA always visible -->
       <a href="drop.html" class="nav__cta">Drop a Tip</a>
 
+      <!-- Mobile toggle -->
       <button
         class="nav__mobile-toggle"
         aria-expanded="false"
@@ -67,13 +74,14 @@
       </button>
     </div>
 
+    <!-- Mobile menu -->
     <div id="mobile-menu" class="nav__mobile-menu" role="list">
       <a href="registry.html" class="nav__mobile-link">Registry</a>
       <a href="about.html" class="nav__mobile-link">About</a>
       <a href="apply.html" class="nav__mobile-link">Research Access</a>
       <a href="support.html" class="nav__mobile-link">Support</a>
       <!-- SWAP: Update with live Substack URL -->
-      <a href="https://thevaultinvestigates.cloud" class="nav__mobile-link" target="_blank" rel="noopener noreferrer">Substack</a>
+      <a href="https://thevaultinvestigates.cloud" class="nav__mobile-link" target="_blank" rel="noopener">Substack</a>
       <a href="drop.html" class="nav__mobile-cta">Drop a Tip</a>
     </div>
   </nav>
@@ -82,6 +90,8 @@
 
     <!-- ============================================================
          SECTION 1 — HERO
+         Framing: Living registry, evidence-first, three jurisdictions.
+         Not a news homepage. Not a nonprofit appeal.
     ============================================================ -->
     <section class="hero" aria-labelledby="hero-headline">
       <div class="container">
@@ -136,8 +146,9 @@
 
     <!-- ============================================================
          SECTION 2 — THE REGISTRY
+         Shows what the registry is and previews the Receipts page.
          SWAP: Replace placeholder cards with live registry entries
-         once case files publish from github.com/PapiRicanPI/the-vault-investigates-receipts
+         once case files are published from thevaultinvestigates.cloud/receipts
     ============================================================ -->
     <section class="section section--bordered" aria-labelledby="registry-heading">
       <div class="container">
@@ -154,7 +165,7 @@
                 The record, structured.
               </h2>
               <p class="t-body--lead section-header__standfirst">
-                Every entry begins with a primary source — a DOJ press release, a court filing, a formal inquiry, a confirmed violation record. Entries are extracted, categorized, and reviewed before they publish. Nothing goes on record that cannot be sourced.
+                Every entry in The Vault's registry begins with a primary source — a DOJ press release, a court filing, a formal inquiry, a confirmed violation record. Entries are extracted, categorized, and reviewed before they publish. Nothing goes on record that cannot be sourced.
               </p>
             </div>
 
@@ -192,8 +203,9 @@
               </div>
 
               <div class="case-card__footer">
+                <!-- SWAP: Replace with live receipts page link -->
                 <span class="case-card__date">File opens when scanner completes</span>
-                <a href="https://github.com/PapiRicanPI/the-vault-investigates-receipts" class="btn btn--text" target="_blank" rel="noopener noreferrer">View the Receipts page</a>
+                <a href="https://thevaultinvestigates.cloud/receipts" class="btn btn--text" target="_blank" rel="noopener">View the Receipts page</a>
               </div>
             </article>
 
@@ -270,12 +282,14 @@
 
     <!-- ============================================================
          SECTION 3 — WHAT WE INVESTIGATE
+         Coverage domains + editorial framing paragraph.
     ============================================================ -->
     <section class="section section--bordered bg-surface" aria-labelledby="scope-heading">
       <div class="container">
 
         <div class="grid-2" style="align-items:start;">
 
+          <!-- Left: Editorial framing -->
           <div>
             <div class="section-header">
               <div class="section-header__eyebrow">
@@ -293,10 +307,11 @@
             </div>
 
             <p class="t-body">
-              The Vault follows the paper trail connecting public funding to private outcomes, documents accountability gaps in the systems governments build to serve vulnerable populations, and preserves evidence that powerful actors work to erase. We operate across three jurisdictions where this dynamic is acute, undercovered, and documentable from primary sources.
+              The Vault follows the paper trail that connects public funding allocations to private outcomes, documents accountability gaps in the systems governments build to serve vulnerable populations, and preserves the evidence that powerful actors work to make disappear. We operate across three jurisdictions where this dynamic is acute, undercovered, and documentable from primary sources.
             </p>
           </div>
 
+          <!-- Right: Coverage domains -->
           <div>
             <ul role="list" style="display:flex;flex-direction:column;gap:0;border:1px solid var(--vault-border);">
 
@@ -339,6 +354,7 @@
 
     <!-- ============================================================
          SECTION 4 — JURISDICTIONS
+         Three-country scope block. Explicit geographic framing.
     ============================================================ -->
     <section class="section section--bordered" aria-labelledby="jurisdiction-heading">
       <div class="container">
@@ -387,7 +403,8 @@
     </section>
 
     <!-- ============================================================
-         SECTION 5 — THE RECORD
+         SECTION 5 — THE ARCHIVE / RECORD STATE
+         Honest seeded-state framing. Forward momentum, not false depth.
          SWAP: Update all stat values once DOJ scanner runs.
     ============================================================ -->
     <section class="section section--bordered bg-surface" aria-labelledby="archive-heading">
@@ -405,13 +422,18 @@
               </h2>
             </div>
 
+            <p class="t-body" style="margin-bottom:1.5rem;">
+              The Vault's archival infrastructure is built to receive, structure, and preserve evidence as it arrives — extracted from primary sources, verified before publication, and maintained independently of any institutional or advertiser relationship. The record grows with every scanner run, every verified tip, and every published case file.
+            </p>
+
             <p class="t-body" style="margin-bottom:2rem;">
-              The Vault's archival infrastructure is built to receive, structure, and preserve evidence as it arrives — extracted from primary sources, verified before publication, and maintained independently of any institutional or advertiser relationship. The record grows with every scanner run, every verified tip, and every published case file. What fills it is the work ahead.
+              At launch, the foundation is in place. What fills it is the work ahead.
             </p>
 
             <a href="registry.html" class="btn btn--ghost">Access the Registry</a>
           </div>
 
+          <!-- Archive status block -->
           <div>
             <div class="t-label" style="margin-bottom:1rem;">System Status</div>
 
@@ -424,7 +446,7 @@
               </div>
 
               <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.25rem;border-bottom:1px solid var(--vault-border);align-items:center;">
-                <!-- SWAP: Change to badge--active / Active when scanner first run completes -->
+                <!-- SWAP: Change to ACTIVE when scanner first run completes -->
                 <dt class="t-mono">DOJ SCANNER</dt>
                 <dd><span class="badge badge--pending">Pending</span></dd>
               </div>
@@ -436,13 +458,14 @@
               </div>
 
               <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.25rem;border-bottom:1px solid var(--vault-border);align-items:center;">
-                <!-- SWAP: Change to badge--active / Active once ProtonMail or Signal is confirmed live -->
+                <!-- SWAP: Change label to TIP CHANNEL and badge to badge--active once ProtonMail
+                     and/or Signal channel is confirmed live -->
                 <dt class="t-mono">TIP CHANNEL</dt>
                 <dd><span class="badge badge--incoming">Finalizing</span></dd>
               </div>
 
               <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.25rem;border-bottom:1px solid var(--vault-border);align-items:center;">
-                <!-- SWAP: Change to badge--active / Live when billing resolved and portal restored -->
+                <!-- SWAP: Change to LIVE when billing resolved and portal restored -->
                 <dt class="t-mono">VETTING PORTAL</dt>
                 <dd><span class="badge badge--pending">Restoring</span></dd>
               </div>
@@ -453,14 +476,16 @@
               </div>
 
             </dl>
-          </div>
 
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
          SECTION 6 — AUDIENCE ENTRY POINTS
+         Routes each visitor type to the right destination.
+         Editorial-table-of-contents layout, not icon card grid.
     ============================================================ -->
     <section class="section section--bordered" aria-labelledby="entry-heading">
       <div class="container">
@@ -487,7 +512,7 @@
           <div class="entry-rail" role="listitem">
             <p class="entry-rail__directive">If you are a journalist or researcher —</p>
             <p class="entry-rail__response">
-              Research access and collaboration applications are open. The portal is being restored — the bridge email is active in the meantime.
+              Research access and collaboration applications are open. Contact us to begin the vetting process. The portal is currently being restored — the bridge email is active.
               <a href="apply.html">Apply for access →</a>
             </p>
           </div>
@@ -495,7 +520,7 @@
           <div class="entry-rail" role="listitem">
             <p class="entry-rail__directive">If you are following the registry —</p>
             <p class="entry-rail__response">
-              Case files update as evidence is verified and reviewed. The DOJ scanner populates new entries as it runs. Full analysis publishes on the Substack.
+              Case files update as evidence is verified and reviewed. The DOJ scanner populates new entries as it runs. The full analysis publishes on the Substack.
               <a href="registry.html">Enter the registry →</a>
             </p>
           </div>
@@ -504,8 +529,8 @@
             <p class="entry-rail__directive">If you want the analysis and reporting —</p>
             <p class="entry-rail__response">
               The Vault's investigative writing — following the money, naming the actors, explaining the patterns — publishes on Substack. Hundreds of subscribers follow the work.
-              <!-- SWAP: Confirm Substack URL -->
-              <a href="https://thevaultinvestigates.cloud" target="_blank" rel="noopener noreferrer">Read the Substack →</a>
+              <!-- SWAP: Update with confirmed Substack URL -->
+              <a href="https://thevaultinvestigates.cloud" target="_blank" rel="noopener">Read the Substack →</a>
             </p>
           </div>
 
@@ -524,6 +549,7 @@
 
     <!-- ============================================================
          SECTION 7 — TRUST SIGNALS + ABOUT SNIPPET
+         Pseudonymous identity framing. Trust through honesty.
     ============================================================ -->
     <section class="section section--bordered bg-surface" aria-labelledby="trust-heading">
       <div class="container">
@@ -541,11 +567,11 @@
             </div>
 
             <p class="t-body" style="margin-bottom:1.25rem;">
-              The Vault Investigates is operated by a single investigative archivist working under the pseudonym <em>The Vault Archivist</em> — a deliberate operational choice made to protect source relationships and the integrity of ongoing investigations.
+              The Vault Investigates is operated by a single investigative archivist working under the pseudonym <em>The Vault Archivist</em>. The pseudonymous identity is a deliberate operational choice — not an omission — made to protect source relationships and maintain the integrity of ongoing investigations.
             </p>
 
             <p class="t-body" style="margin-bottom:2rem;">
-              Every registry entry is sourced from primary records and passes editorial review before publication. The archive is maintained independently of any institutional, political, or advertiser relationship.
+              Every entry in the registry is sourced from primary records. Every published case file passes editorial review before it goes public. The archive is maintained independently of any institutional, political, or advertiser relationship.
             </p>
 
             <a href="about.html" class="btn btn--text">Read the full editorial standards</a>
@@ -566,7 +592,7 @@
             <div class="protection-block" style="margin-top:1.5rem;">
               <div class="protection-block__heading">Source Protection Statement</div>
               <p class="protection-block__text">
-                The Vault will not voluntarily disclose a source's identity. Tip channels are maintained with source protection as the primary constraint. No submission system is zero-risk — we will not pretend otherwise. Protecting sources is the first consideration in every operational decision we make.
+                The Vault will not voluntarily disclose a source's identity. Tip channels are maintained with source protection as the primary constraint. No submission system is zero-risk — we will not pretend otherwise. What we can promise is that protecting sources is the first consideration in every operational decision we make.
               </p>
             </div>
           </div>
@@ -577,7 +603,8 @@
 
     <!-- ============================================================
          SECTION 8 — SUPPORT RAIL
-         SWAP: Replace btn--ghost link with payment processor CTA when live.
+         Dignified, specific, mission-driven. No payment processor yet.
+         SWAP: Add payment CTA when processor is live.
     ============================================================ -->
     <div class="support-rail" role="complementary" aria-label="Support The Vault">
       <div class="container">
@@ -585,11 +612,11 @@
           <div>
             <div class="t-label t-label--bronze" style="margin-bottom:0.75rem;">Support The Vault Investigates</div>
             <p class="t-body--lead" style="margin-bottom:0;">
-              Secure infrastructure, document archival, source communication, legal review, and reporting time all have real costs. Supporters of The Vault sustain the operational capacity that makes this work possible without advertiser dependency or institutional compromise.
+              Running an independent evidence registry requires more than time. Secure infrastructure, document archival, source communication, legal review, and reporting hours all have real costs. Supporters of The Vault sustain the operational capacity that makes this work possible without advertiser dependency or institutional compromise.
             </p>
           </div>
           <div style="flex-shrink:0;">
-            <!-- SWAP: Replace with payment processor CTA when live -->
+            <!-- SWAP: Replace email link with payment processor CTA when live -->
             <a href="support.html" class="btn btn--ghost">Support This Work</a>
             <p class="t-mono" style="margin-top:0.6rem;text-align:center;font-size:0.6rem;">
               No payment processor yet — see the support page
@@ -607,12 +634,14 @@
 
       <div class="footer__grid">
 
+        <!-- Col 1: Brand -->
         <div>
           <div class="footer__brand-name">The Vault Investigates</div>
-          <div class="footer__brand-domain">vault.povertypimpslayerthevault.io</div>
+          <div class="footer__brand-domain">truthdrop.io</div>
           <p class="footer__mission">
             Following the money behind the business of poverty — in the United States, Puerto Rico, and the Philippines. Independent. Evidence-first. No access agreements.
           </p>
+          <!-- SWAP: Update archive date when first entries publish -->
           <p class="footer__source-note">
             Source protection active · Archive initializing<br>
             <!-- SWAP: Replace with actual last-updated date -->
@@ -620,6 +649,7 @@
           </p>
         </div>
 
+        <!-- Col 2: Navigation -->
         <nav aria-label="Footer navigation">
           <div class="footer__col-heading">Navigate</div>
           <ul class="footer__nav-list" role="list">
@@ -629,10 +659,11 @@
             <li><a href="about.html" class="footer__nav-link">About</a></li>
             <li><a href="support.html" class="footer__nav-link">Support</a></li>
             <!-- SWAP: Confirm Substack URL -->
-            <li><a href="https://thevaultinvestigates.cloud" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Substack</a></li>
+            <li><a href="https://thevaultinvestigates.cloud" class="footer__nav-link" target="_blank" rel="noopener">Substack</a></li>
           </ul>
         </nav>
 
+        <!-- Col 3: Legal + Security -->
         <div>
           <div class="footer__col-heading">Security &amp; Legal</div>
           <ul class="footer__nav-list" role="list">
@@ -652,7 +683,7 @@
           © 2024 The Vault Investigates · The Vault Archivist · All rights reserved
         </p>
         <p class="footer__domain-mark">
-          vault.povertypimpslayerthevault.io
+          TruthDrop.io — credibility gateway
         </p>
       </div>
 
