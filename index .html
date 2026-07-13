@@ -1,695 +1,167 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Vault Investigates — Following the Money Behind the Business of Poverty</title>
-  <meta name="description" content="The Vault Investigates tracks how governments, NGOs, and political actors profit from aid and housing systems in the United States, Puerto Rico, and the Philippines. A living evidence registry." />
-  <meta property="og:title" content="The Vault Investigates" />
-  <meta property="og:description" content="Following the money behind the business of poverty. US · Puerto Rico · Philippines." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://truthdrop.io" />
-  <meta name="theme-color" content="#0D0B09" />
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-  <!-- Skip Navigation -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <!-- ============================================================
-       ALERT RAIL
-       SWAP: Activate when first DOJ scanner results publish.
-       Remove the HTML comment and uncomment the element below.
-       Update copy with investigation title and correct link.
-  ============================================================ -->
-  <!--
-  <div class="alert-rail" role="alert">
-    <p class="alert-rail__text container">
-      NEW REGISTRY ENTRY — [Investigation Title] now published.
-      <a href="/registry.html">Enter the file →</a>
-    </p>
-  </div>
-  -->
-
-  <!-- ── NAVIGATION ──────────────────────────────────────────── -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="container nav__inner">
-      <a href="index.html" class="nav__brand" aria-label="The Vault Investigates — Home">
-        <span class="nav__brand-name">The Vault Investigates</span>
-        <span class="nav__brand-sub">truthdrop.io</span>
-      </a>
-
-      <!-- Desktop links -->
-      <ul class="nav__links" role="list">
-        <li><a href="registry.html" class="nav__link">Registry</a></li>
-        <li><a href="about.html" class="nav__link">About</a></li>
-        <li><a href="apply.html" class="nav__link">Research Access</a></li>
-        <li><a href="support.html" class="nav__link">Support</a></li>
-        <li>
-          <!-- SWAP: Update Substack link with live URL once confirmed -->
-          <a href="https://thevaultinvestigates.cloud" class="nav__link" target="_blank" rel="noopener">Substack</a>
-        </li>
-      </ul>
-
-      <!-- CTA always visible -->
-      <a href="drop.html" class="nav__cta">Drop a Tip</a>
-
-      <!-- Mobile toggle -->
-      <button
-        class="nav__mobile-toggle"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-        aria-label="Open navigation menu"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="nav__mobile-menu" role="list">
-      <a href="registry.html" class="nav__mobile-link">Registry</a>
-      <a href="about.html" class="nav__mobile-link">About</a>
-      <a href="apply.html" class="nav__mobile-link">Research Access</a>
-      <a href="support.html" class="nav__mobile-link">Support</a>
-      <!-- SWAP: Update with live Substack URL -->
-      <a href="https://thevaultinvestigates.cloud" class="nav__mobile-link" target="_blank" rel="noopener">Substack</a>
-      <a href="drop.html" class="nav__mobile-cta">Drop a Tip</a>
-    </div>
-  </nav>
-
-  <main id="main-content">
-
-    <!-- ============================================================
-         SECTION 1 — HERO
-         Framing: Living registry, evidence-first, three jurisdictions.
-         Not a news homepage. Not a nonprofit appeal.
-    ============================================================ -->
-    <section class="hero" aria-labelledby="hero-headline">
-      <div class="container">
-
-        <div class="hero__eyebrow">
-          <span class="hero__eyebrow-line" aria-hidden="true"></span>
-          <span class="t-label t-label--gold">The Vault Investigates</span>
-        </div>
-
-        <h1 id="hero-headline" class="t-display hero__headline">
-          Following the money behind the business of poverty.
-        </h1>
-
-        <p class="t-body--lead hero__standfirst">
-          The Vault tracks how governments, NGOs, and political actors profit from the systems built to help the poor — in the United States, Puerto Rico, and the Philippines. The registry is live. The evidence is public record. The analysis follows.
-        </p>
-
-        <div class="btn-group hero__actions">
-          <a href="registry.html" class="btn btn--primary">Enter the Registry</a>
-          <a href="drop.html" class="btn btn--ghost">Drop a Tip</a>
-        </div>
-
-        <!-- Registry status bar -->
-        <!-- SWAP: Replace all placeholder values with live counts after DOJ scanner first run -->
-        <div class="stat-bar" role="group" aria-label="Registry status">
-          <div class="stat-bar__item">
-            <div class="stat-bar__value" id="stat-status">ACTIVE</div>
-            <div class="stat-bar__label">Registry Status</div>
-          </div>
-          <div class="stat-bar__item">
-            <!-- SWAP: Replace "SEEDING" with live case count -->
-            <div class="stat-bar__value">SEEDING</div>
-            <div class="stat-bar__label">Case Files</div>
-          </div>
-          <div class="stat-bar__item">
-            <!-- SWAP: Replace "PENDING" with live scanner status -->
-            <div class="stat-bar__value">PENDING</div>
-            <div class="stat-bar__label">DOJ Scanner</div>
-          </div>
-          <div class="stat-bar__item">
-            <div class="stat-bar__value">3</div>
-            <div class="stat-bar__label">Jurisdictions</div>
-          </div>
-          <div class="stat-bar__item">
-            <div class="stat-bar__value">2024</div>
-            <div class="stat-bar__label">Est.</div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 2 — THE REGISTRY
-         Shows what the registry is and previews the Receipts page.
-         SWAP: Replace placeholder cards with live registry entries
-         once case files are published from thevaultinvestigates.cloud/receipts
-    ============================================================ -->
-    <section class="section section--bordered" aria-labelledby="registry-heading">
-      <div class="container">
-
-        <div class="grid-editorial">
-
-          <!-- Left: Registry explanation -->
-          <div>
-            <div class="section-header">
-              <div class="section-header__eyebrow">
-                <span class="t-label t-label--gold">The Registry</span>
-              </div>
-              <h2 id="registry-heading" class="t-h1 section-header__title">
-                The record, structured.
-              </h2>
-              <p class="t-body--lead section-header__standfirst">
-                Every entry in The Vault's registry begins with a primary source — a DOJ press release, a court filing, a formal inquiry, a confirmed violation record. Entries are extracted, categorized, and reviewed before they publish. Nothing goes on record that cannot be sourced.
-              </p>
-            </div>
-
-            <!-- Featured case card -->
-            <!-- SWAP: Replace with first published case file from the Receipts page -->
-            <article class="case-card case-card--active" aria-labelledby="featured-case-title">
-              <div class="case-card__meta">
-                <span class="badge badge--active">Active</span>
-                <span class="case-card__jurisdiction">🇵🇷 Puerto Rico</span>
-              </div>
-              <h3 id="featured-case-title" class="case-card__title">
-                <!-- SWAP: Replace with first live case title -->
-                Registry Populating — First Case Files Loading
-              </h3>
-              <p class="case-card__standfirst">
-                <!-- SWAP: Replace with first live case standfirst -->
-                The DOJ scanner is initializing. The first structured case files will populate this registry once the scanner completes its first run and entries clear editorial review. The infrastructure is in place. The record begins here.
-              </p>
-
-              <!-- Evidence badge — SWAP all values post-scanner run -->
-              <div class="evidence-badge" role="group" aria-label="Evidence metadata">
-                <div class="evidence-badge__item">
-                  <span class="evidence-badge__value">—</span>
-                  <span class="evidence-badge__key">Documents</span>
-                </div>
-                <div class="evidence-badge__item">
-                  <span class="evidence-badge__value">PENDING</span>
-                  <span class="evidence-badge__key">Verification</span>
-                </div>
-                <div class="evidence-badge__item">
-                  <!-- SWAP: Replace with actual date of earliest evidence -->
-                  <span class="evidence-badge__value">—</span>
-                  <span class="evidence-badge__key">Earliest Record</span>
-                </div>
-              </div>
-
-              <div class="case-card__footer">
-                <!-- SWAP: Replace with live receipts page link -->
-                <span class="case-card__date">File opens when scanner completes</span>
-                <a href="https://thevaultinvestigates.cloud/receipts" class="btn btn--text" target="_blank" rel="noopener">View the Receipts page</a>
-              </div>
-            </article>
-
-          </div>
-
-          <!-- Right: Active files sidebar -->
-          <aside aria-label="Other files">
-            <div class="section-header">
-              <div class="section-header__eyebrow">
-                <span class="t-label">Pipeline</span>
-              </div>
-              <h2 class="t-h3 section-header__title">Other Active Files</h2>
-            </div>
-
-            <!-- SWAP: Replace all three cards with live case entries once available -->
-            <div style="display:flex;flex-direction:column;gap:0;">
-
-              <article class="case-card case-card--pending" style="margin-bottom:0;border-bottom:none;">
-                <div class="case-card__meta">
-                  <span class="badge badge--incoming">Incoming</span>
-                  <span class="case-card__jurisdiction">🇺🇸 United States</span>
-                </div>
-                <h3 class="case-card__title" style="font-size:0.95rem;">
-                  <!-- SWAP: Replace with live case title -->
-                  DOJ Case File — Loading
-                </h3>
-                <div class="case-card__footer">
-                  <span class="case-card__date">Awaiting scanner run</span>
-                </div>
-              </article>
-
-              <div style="border-top:1px solid var(--vault-border);"></div>
-
-              <article class="case-card case-card--pending" style="margin-bottom:0;border-bottom:none;">
-                <div class="case-card__meta">
-                  <span class="badge badge--incoming">Incoming</span>
-                  <span class="case-card__jurisdiction">🇵🇭 Philippines</span>
-                </div>
-                <h3 class="case-card__title" style="font-size:0.95rem;">
-                  <!-- SWAP: Replace with live case title -->
-                  Registry Entry — Loading
-                </h3>
-                <div class="case-card__footer">
-                  <span class="case-card__date">Awaiting scanner run</span>
-                </div>
-              </article>
-
-              <div style="border-top:1px solid var(--vault-border);"></div>
-
-              <article class="case-card case-card--pending" style="margin-bottom:0;">
-                <div class="case-card__meta">
-                  <span class="badge badge--incoming">Incoming</span>
-                  <span class="case-card__jurisdiction">🇵🇷 Puerto Rico</span>
-                </div>
-                <h3 class="case-card__title" style="font-size:0.95rem;">
-                  <!-- SWAP: Replace with live case title -->
-                  Registry Entry — Loading
-                </h3>
-                <div class="case-card__footer">
-                  <span class="case-card__date">Awaiting scanner run</span>
-                </div>
-              </article>
-
-            </div>
-
-            <div style="margin-top:1.5rem;">
-              <a href="registry.html" class="btn btn--text">View all case files</a>
-            </div>
-          </aside>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 3 — WHAT WE INVESTIGATE
-         Coverage domains + editorial framing paragraph.
-    ============================================================ -->
-    <section class="section section--bordered bg-surface" aria-labelledby="scope-heading">
-      <div class="container">
-
-        <div class="grid-2" style="align-items:start;">
-
-          <!-- Left: Editorial framing -->
-          <div>
-            <div class="section-header">
-              <div class="section-header__eyebrow">
-                <span class="t-label t-label--gold">Coverage Scope</span>
-              </div>
-              <h2 id="scope-heading" class="t-h2 section-header__title">
-                What The Vault investigates.
-              </h2>
-            </div>
-
-            <div class="pull-quote">
-              <p class="pull-quote__text">
-                The business of poverty is not metaphor. It is a measurable, traceable system of incentives — where institutional actors profit from the continuation of the conditions they claim to solve.
-              </p>
-            </div>
-
-            <p class="t-body">
-              The Vault follows the paper trail that connects public funding allocations to private outcomes, documents accountability gaps in the systems governments build to serve vulnerable populations, and preserves the evidence that powerful actors work to make disappear. We operate across three jurisdictions where this dynamic is acute, undercovered, and documentable from primary sources.
-            </p>
-          </div>
-
-          <!-- Right: Coverage domains -->
-          <div>
-            <ul role="list" style="display:flex;flex-direction:column;gap:0;border:1px solid var(--vault-border);">
-
-              <li style="padding:1.25rem 1.5rem;border-bottom:1px solid var(--vault-border);">
-                <div class="t-label t-label--gold" style="margin-bottom:0.4rem;">Government Aid Systems</div>
-                <p style="font-size:0.83rem;color:var(--vault-text-2);line-height:1.6;">How federal and territorial aid money moves from appropriation to distribution — and where it stops reaching intended recipients.</p>
-              </li>
-
-              <li style="padding:1.25rem 1.5rem;border-bottom:1px solid var(--vault-border);">
-                <div class="t-label t-label--gold" style="margin-bottom:0.4rem;">NGO and Nonprofit Fund Flows</div>
-                <p style="font-size:0.83rem;color:var(--vault-text-2);line-height:1.6;">Grant chains, subcontractor relationships, and the structural distance between a dollar allocated and the community it was meant to reach.</p>
-              </li>
-
-              <li style="padding:1.25rem 1.5rem;border-bottom:1px solid var(--vault-border);">
-                <div class="t-label t-label--gold" style="margin-bottom:0.4rem;">Housing and Displacement</div>
-                <p style="font-size:0.83rem;color:var(--vault-text-2);line-height:1.6;">Who controls subsidized housing infrastructure, how displacement is manufactured through policy, and where the financial interests point.</p>
-              </li>
-
-              <li style="padding:1.25rem 1.5rem;border-bottom:1px solid var(--vault-border);">
-                <div class="t-label t-label--gold" style="margin-bottom:0.4rem;">Disaster Recovery Money Trails</div>
-                <p style="font-size:0.83rem;color:var(--vault-text-2);line-height:1.6;">Post-disaster reconstruction funding — FEMA, HUD CDBG-DR, international ODA — and the documented distance between allocation and delivery.</p>
-              </li>
-
-              <li style="padding:1.25rem 1.5rem;border-bottom:1px solid var(--vault-border);">
-                <div class="t-label t-label--gold" style="margin-bottom:0.4rem;">Political Actor Accountability</div>
-                <p style="font-size:0.83rem;color:var(--vault-text-2);line-height:1.6;">Elected and appointed officials whose financial interests intersect with the programs they oversee, fund, or vote on.</p>
-              </li>
-
-              <li style="padding:1.25rem 1.5rem;">
-                <div class="t-label t-label--gold" style="margin-bottom:0.4rem;">Evidence Preservation</div>
-                <p style="font-size:0.83rem;color:var(--vault-text-2);line-height:1.6;">Public-record documentation that agencies remove, reclassify, or quietly delete. The Vault archives it before it disappears.</p>
-              </li>
-
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 4 — JURISDICTIONS
-         Three-country scope block. Explicit geographic framing.
-    ============================================================ -->
-    <section class="section section--bordered" aria-labelledby="jurisdiction-heading">
-      <div class="container">
-
-        <div class="section-header" style="max-width:50ch;">
-          <div class="section-header__eyebrow">
-            <span class="t-label t-label--gold">Active Jurisdictions</span>
-          </div>
-          <h2 id="jurisdiction-heading" class="t-h2 section-header__title">
-            Three territories. One pattern.
-          </h2>
-          <p class="t-body section-header__standfirst">
-            The exploitation of poverty-relief infrastructure is not unique to any single country. The Vault documents it where the paper trail is densest and the oversight is weakest.
-          </p>
-        </div>
-
-        <div class="jurisdiction-grid" role="list">
-
-          <div class="jurisdiction-item" role="listitem">
-            <div class="jurisdiction-item__flag" aria-hidden="true">🇺🇸</div>
-            <div class="jurisdiction-item__name">United States</div>
-            <p class="jurisdiction-item__desc">
-              Federal aid systems, HUD housing programs, DOJ-tracked violations, congressional appropriations, and the contractor networks that absorb public money before it reaches communities.
-            </p>
-          </div>
-
-          <div class="jurisdiction-item" role="listitem">
-            <div class="jurisdiction-item__flag" aria-hidden="true">🇵🇷</div>
-            <div class="jurisdiction-item__name">Puerto Rico</div>
-            <p class="jurisdiction-item__desc">
-              Territorial oversight gaps, post-disaster reconstruction funding (Maria, Fiona), FEMA and HUD-CDBG accountability, and the political networks that control aid distribution on the island.
-            </p>
-          </div>
-
-          <div class="jurisdiction-item" role="listitem">
-            <div class="jurisdiction-item__flag" aria-hidden="true">🇵🇭</div>
-            <div class="jurisdiction-item__name">Philippines</div>
-            <p class="jurisdiction-item__desc">
-              Official Development Assistance flows, DSWD program fund diversion, barangay-level accountability gaps, NGO registration pipelines, and electoral positioning through poverty infrastructure.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 5 — THE ARCHIVE / RECORD STATE
-         Honest seeded-state framing. Forward momentum, not false depth.
-         SWAP: Update all stat values once DOJ scanner runs.
-    ============================================================ -->
-    <section class="section section--bordered bg-surface" aria-labelledby="archive-heading">
-      <div class="container">
-
-        <div class="grid-2" style="align-items:start;">
-
-          <div>
-            <div class="section-header">
-              <div class="section-header__eyebrow">
-                <span class="t-label t-label--gold">The Record</span>
-              </div>
-              <h2 id="archive-heading" class="t-h2 section-header__title">
-                The infrastructure is in place.
-              </h2>
-            </div>
-
-            <p class="t-body" style="margin-bottom:1.5rem;">
-              The Vault's archival infrastructure is built to receive, structure, and preserve evidence as it arrives — extracted from primary sources, verified before publication, and maintained independently of any institutional or advertiser relationship. The record grows with every scanner run, every verified tip, and every published case file.
-            </p>
-
-            <p class="t-body" style="margin-bottom:2rem;">
-              At launch, the foundation is in place. What fills it is the work ahead.
-            </p>
-
-            <a href="registry.html" class="btn btn--ghost">Access the Registry</a>
-          </div>
-
-          <!-- Archive status block -->
-          <div>
-            <div class="t-label" style="margin-bottom:1rem;">System Status</div>
-
-            <!-- SWAP: Replace all status values post-scanner run -->
-            <dl style="display:flex;flex-direction:column;gap:0;border:1px solid var(--vault-border);">
-
-              <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.25rem;border-bottom:1px solid var(--vault-border);align-items:center;">
-                <dt class="t-mono">DATABASE</dt>
-                <dd><span class="badge badge--active">Active</span></dd>
-              </div>
-
-              <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.25rem;border-bottom:1px solid var(--vault-border);align-items:center;">
-                <!-- SWAP: Change to ACTIVE when scanner first run completes -->
-                <dt class="t-mono">DOJ SCANNER</dt>
-                <dd><span class="badge badge--pending">Pending</span></dd>
-              </div>
-
-              <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.25rem;border-bottom:1px solid var(--vault-border);align-items:center;">
-                <!-- SWAP: Update count post-scanner run -->
-                <dt class="t-mono">CASE FILES</dt>
-                <dd><span class="badge badge--incoming">Seeding</span></dd>
-              </div>
-
-              <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.25rem;border-bottom:1px solid var(--vault-border);align-items:center;">
-                <!-- SWAP: Change label to TIP CHANNEL and badge to badge--active once ProtonMail
-                     and/or Signal channel is confirmed live -->
-                <dt class="t-mono">TIP CHANNEL</dt>
-                <dd><span class="badge badge--incoming">Finalizing</span></dd>
-              </div>
-
-              <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.25rem;border-bottom:1px solid var(--vault-border);align-items:center;">
-                <!-- SWAP: Change to LIVE when billing resolved and portal restored -->
-                <dt class="t-mono">VETTING PORTAL</dt>
-                <dd><span class="badge badge--pending">Restoring</span></dd>
-              </div>
-
-              <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.25rem;align-items:center;">
-                <dt class="t-mono">ANON CHANNEL</dt>
-                <dd><span class="badge badge--incoming">60–90 Days</span></dd>
-              </div>
-
-            </dl>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 6 — AUDIENCE ENTRY POINTS
-         Routes each visitor type to the right destination.
-         Editorial-table-of-contents layout, not icon card grid.
-    ============================================================ -->
-    <section class="section section--bordered" aria-labelledby="entry-heading">
-      <div class="container">
-
-        <div class="section-header">
-          <div class="section-header__eyebrow">
-            <span class="t-label t-label--gold">Where to Go</span>
-          </div>
-          <h2 id="entry-heading" class="t-h2 section-header__title">
-            Whoever you are, there is a place here.
-          </h2>
-        </div>
-
-        <div class="entry-rails" role="list">
-
-          <div class="entry-rail" role="listitem">
-            <p class="entry-rail__directive">If you have information —</p>
-            <p class="entry-rail__response">
-              The Vault accepts tips through a secure channel. Your identity is protected by default. Signal and ProtonMail tip channels are being finalized and will be active shortly.
-              <a href="drop.html">How to reach us →</a>
-            </p>
-          </div>
-
-          <div class="entry-rail" role="listitem">
-            <p class="entry-rail__directive">If you are a journalist or researcher —</p>
-            <p class="entry-rail__response">
-              Research access and collaboration applications are open. Contact us to begin the vetting process. The portal is currently being restored — the bridge email is active.
-              <a href="apply.html">Apply for access →</a>
-            </p>
-          </div>
-
-          <div class="entry-rail" role="listitem">
-            <p class="entry-rail__directive">If you are following the registry —</p>
-            <p class="entry-rail__response">
-              Case files update as evidence is verified and reviewed. The DOJ scanner populates new entries as it runs. The full analysis publishes on the Substack.
-              <a href="registry.html">Enter the registry →</a>
-            </p>
-          </div>
-
-          <div class="entry-rail" role="listitem">
-            <p class="entry-rail__directive">If you want the analysis and reporting —</p>
-            <p class="entry-rail__response">
-              The Vault's investigative writing — following the money, naming the actors, explaining the patterns — publishes on Substack. Hundreds of subscribers follow the work.
-              <!-- SWAP: Update with confirmed Substack URL -->
-              <a href="https://thevaultinvestigates.cloud" target="_blank" rel="noopener">Read the Substack →</a>
-            </p>
-          </div>
-
-          <div class="entry-rail" role="listitem">
-            <p class="entry-rail__directive">If you want to sustain this work —</p>
-            <p class="entry-rail__response">
-              Independent investigative infrastructure has real costs. No advertisers. No institutional funding. Supporters keep the registry running, the scanner active, and the archive maintained.
-              <a href="support.html">Support The Vault →</a>
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 7 — TRUST SIGNALS + ABOUT SNIPPET
-         Pseudonymous identity framing. Trust through honesty.
-    ============================================================ -->
-    <section class="section section--bordered bg-surface" aria-labelledby="trust-heading">
-      <div class="container">
-
-        <div class="grid-2" style="align-items:start;gap:3rem;">
-
-          <div>
-            <div class="section-header">
-              <div class="section-header__eyebrow">
-                <span class="t-label t-label--gold">About This Publication</span>
-              </div>
-              <h2 id="trust-heading" class="t-h2 section-header__title">
-                Independent. Sourced. No access agreements.
-              </h2>
-            </div>
-
-            <p class="t-body" style="margin-bottom:1.25rem;">
-              The Vault Investigates is operated by a single investigative archivist working under the pseudonym <em>The Vault Archivist</em>. The pseudonymous identity is a deliberate operational choice — not an omission — made to protect source relationships and maintain the integrity of ongoing investigations.
-            </p>
-
-            <p class="t-body" style="margin-bottom:2rem;">
-              Every entry in the registry is sourced from primary records. Every published case file passes editorial review before it goes public. The archive is maintained independently of any institutional, political, or advertiser relationship.
-            </p>
-
-            <a href="about.html" class="btn btn--text">Read the full editorial standards</a>
-          </div>
-
-          <div>
-            <div class="trust-rail" role="list" aria-label="Operating principles">
-              <span class="trust-rail__item" role="listitem">Independent — no institutional funding</span>
-              <span class="trust-rail__item" role="listitem">No advertiser relationships</span>
-              <span class="trust-rail__item" role="listitem">Source protection active</span>
-              <span class="trust-rail__item" role="listitem">Evidence archived on submission</span>
-              <span class="trust-rail__item" role="listitem">Primary sources only</span>
-              <span class="trust-rail__item" role="listitem">Editorial review before publication</span>
-              <span class="trust-rail__item" role="listitem">Pseudonymous for operational security</span>
-              <span class="trust-rail__item" role="listitem">US · Puerto Rico · Philippines</span>
-            </div>
-
-            <div class="protection-block" style="margin-top:1.5rem;">
-              <div class="protection-block__heading">Source Protection Statement</div>
-              <p class="protection-block__text">
-                The Vault will not voluntarily disclose a source's identity. Tip channels are maintained with source protection as the primary constraint. No submission system is zero-risk — we will not pretend otherwise. What we can promise is that protecting sources is the first consideration in every operational decision we make.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         SECTION 8 — SUPPORT RAIL
-         Dignified, specific, mission-driven. No payment processor yet.
-         SWAP: Add payment CTA when processor is live.
-    ============================================================ -->
-    <div class="support-rail" role="complementary" aria-label="Support The Vault">
-      <div class="container">
-        <div class="support-rail__inner">
-          <div>
-            <div class="t-label t-label--bronze" style="margin-bottom:0.75rem;">Support The Vault Investigates</div>
-            <p class="t-body--lead" style="margin-bottom:0;">
-              Running an independent evidence registry requires more than time. Secure infrastructure, document archival, source communication, legal review, and reporting hours all have real costs. Supporters of The Vault sustain the operational capacity that makes this work possible without advertiser dependency or institutional compromise.
-            </p>
-          </div>
-          <div style="flex-shrink:0;">
-            <!-- SWAP: Replace email link with payment processor CTA when live -->
-            <a href="support.html" class="btn btn--ghost">Support This Work</a>
-            <p class="t-mono" style="margin-top:0.6rem;text-align:center;font-size:0.6rem;">
-              No payment processor yet — see the support page
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </main>
-
-  <!-- ── FOOTER ──────────────────────────────────────────────── -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-
-      <div class="footer__grid">
-
-        <!-- Col 1: Brand -->
-        <div>
-          <div class="footer__brand-name">The Vault Investigates</div>
-          <div class="footer__brand-domain">truthdrop.io</div>
-          <p class="footer__mission">
-            Following the money behind the business of poverty — in the United States, Puerto Rico, and the Philippines. Independent. Evidence-first. No access agreements.
-          </p>
-          <!-- SWAP: Update archive date when first entries publish -->
-          <p class="footer__source-note">
-            Source protection active · Archive initializing<br>
-            <!-- SWAP: Replace with actual last-updated date -->
-            Last updated: [DATE]
-          </p>
-        </div>
-
-        <!-- Col 2: Navigation -->
-        <nav aria-label="Footer navigation">
-          <div class="footer__col-heading">Navigate</div>
-          <ul class="footer__nav-list" role="list">
-            <li><a href="registry.html" class="footer__nav-link">Registry</a></li>
-            <li><a href="drop.html" class="footer__nav-link">Drop a Tip</a></li>
-            <li><a href="apply.html" class="footer__nav-link">Research Access</a></li>
-            <li><a href="about.html" class="footer__nav-link">About</a></li>
-            <li><a href="support.html" class="footer__nav-link">Support</a></li>
-            <!-- SWAP: Confirm Substack URL -->
-            <li><a href="https://thevaultinvestigates.cloud" class="footer__nav-link" target="_blank" rel="noopener">Substack</a></li>
-          </ul>
-        </nav>
-
-        <!-- Col 3: Legal + Security -->
-        <div>
-          <div class="footer__col-heading">Security &amp; Legal</div>
-          <ul class="footer__nav-list" role="list">
-            <li><a href="drop.html#source-protection" class="footer__nav-link">Source Protection Policy</a></li>
-            <li><a href="about.html#standards" class="footer__nav-link">Editorial Standards</a></li>
-            <!-- SWAP: Add legal notice page in Phase 2 -->
-            <li><a href="#" class="footer__nav-link" aria-disabled="true" style="opacity:0.45;pointer-events:none;">Legal Notice (coming)</a></li>
-            <!-- SWAP: Add PGP key link when key is published -->
-            <li><a href="#" class="footer__nav-link" aria-disabled="true" style="opacity:0.45;pointer-events:none;">PGP Key (coming)</a></li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="footer__bottom">
-        <p class="footer__copyright">
-          © 2024 The Vault Investigates · The Vault Archivist · All rights reserved
-        </p>
-        <p class="footer__domain-mark">
-          TruthDrop.io — credibility gateway
-        </p>
-      </div>
-
-    </div>
-  </footer>
-
-  <script src="main.js"></script>
-</body>
-</html>
+Skip to main content
+The Vault Investigates vault.povertypimpslayerthevault.io
+Registry
+About
+Research Access
+Support
+Substack
+Drop a Tip 
+Registry About Research Access Support Substack Drop a Tip
+The Vault Investigates
+Following the money behind the business of poverty.
+The Vault tracks how governments, NGOs, and political actors profit from the systems built to help the poor — in the United States, Puerto Rico, and the Philippines. The registry is live. The evidence is public record. The analysis follows.
+
+Enter the Registry Drop a Tip
+ACTIVE
+Registry Status
+SEEDING
+Case Files
+PENDING
+DOJ Scanner
+3
+Jurisdictions
+2024
+Est.
+The Registry
+The record, structured.
+Every entry begins with a primary source — a DOJ press release, a court filing, a formal inquiry, a confirmed violation record. Entries are extracted, categorized, and reviewed before they publish. Nothing goes on record that cannot be sourced.
+
+Active 🇵🇷 Puerto Rico
+Registry Populating — First Case Files Loading
+The DOJ scanner is initializing. The first structured case files will populate this registry once the scanner completes its first run and entries clear editorial review. The infrastructure is in place. The record begins here.
+
+— Documents
+PENDING Verification
+— Earliest Record
+File opens when scanner completes View the Receipts page
+Pipeline
+Other Active Files
+Incoming 🇺🇸 United States
+DOJ Case File — Loading
+Awaiting scanner run
+Incoming 🇵🇭 Philippines
+Registry Entry — Loading
+Awaiting scanner run
+Incoming 🇵🇷 Puerto Rico
+Registry Entry — Loading
+Awaiting scanner run
+View all case files
+Coverage Scope
+What The Vault investigates.
+The business of poverty is not metaphor. It is a measurable, traceable system of incentives — where institutional actors profit from the continuation of the conditions they claim to solve.
+
+The Vault follows the paper trail connecting public funding to private outcomes, documents accountability gaps in the systems governments build to serve vulnerable populations, and preserves evidence that powerful actors work to erase. We operate across three jurisdictions where this dynamic is acute, undercovered, and documentable from primary sources.
+
+Government Aid Systems
+How federal and territorial aid money moves from appropriation to distribution — and where it stops reaching intended recipients.
+
+NGO and Nonprofit Fund Flows
+Grant chains, subcontractor relationships, and the structural distance between a dollar allocated and the community it was meant to reach.
+
+Housing and Displacement
+Who controls subsidized housing infrastructure, how displacement is manufactured through policy, and where the financial interests point.
+
+Disaster Recovery Money Trails
+Post-disaster reconstruction funding — FEMA, HUD CDBG-DR, international ODA — and the documented distance between allocation and delivery.
+
+Political Actor Accountability
+Elected and appointed officials whose financial interests intersect with the programs they oversee, fund, or vote on.
+
+Evidence Preservation
+Public-record documentation that agencies remove, reclassify, or quietly delete. The Vault archives it before it disappears.
+
+Active Jurisdictions
+Three territories. One pattern.
+The exploitation of poverty-relief infrastructure is not unique to any single country. The Vault documents it where the paper trail is densest and the oversight is weakest.
+
+🇺🇸
+United States
+Federal aid systems, HUD housing programs, DOJ-tracked violations, congressional appropriations, and the contractor networks that absorb public money before it reaches communities.
+
+🇵🇷
+Puerto Rico
+Territorial oversight gaps, post-disaster reconstruction funding (Maria, Fiona), FEMA and HUD-CDBG accountability, and the political networks that control aid distribution on the island.
+
+🇵🇭
+Philippines
+Official Development Assistance flows, DSWD program fund diversion, barangay-level accountability gaps, NGO registration pipelines, and electoral positioning through poverty infrastructure.
+
+The Record
+The infrastructure is in place.
+The Vault's archival infrastructure is built to receive, structure, and preserve evidence as it arrives — extracted from primary sources, verified before publication, and maintained independently of any institutional or advertiser relationship. The record grows with every scanner run, every verified tip, and every published case file. What fills it is the work ahead.
+
+Access the Registry
+System Status
+DATABASE
+Active
+DOJ SCANNER
+Pending
+CASE FILES
+Seeding
+TIP CHANNEL
+Finalizing
+VETTING PORTAL
+Restoring
+ANON CHANNEL
+60–90 Days
+Where to Go
+Whoever you are, there is a place here.
+If you have information —
+
+The Vault accepts tips through a secure channel. Your identity is protected by default. Signal and ProtonMail tip channels are being finalized and will be active shortly. How to reach us →
+
+If you are a journalist or researcher —
+
+Research access and collaboration applications are open. The portal is being restored — the bridge email is active in the meantime. Apply for access →
+
+If you are following the registry —
+
+Case files update as evidence is verified and reviewed. The DOJ scanner populates new entries as it runs. Full analysis publishes on the Substack. Enter the registry →
+
+If you want the analysis and reporting —
+
+The Vault's investigative writing — following the money, naming the actors, explaining the patterns — publishes on Substack. Hundreds of subscribers follow the work. Read the Substack →
+
+If you want to sustain this work —
+
+Independent investigative infrastructure has real costs. No advertisers. No institutional funding. Supporters keep the registry running, the scanner active, and the archive maintained. Support The Vault →
+
+About This Publication
+Independent. Sourced. No access agreements.
+The Vault Investigates is operated by a single investigative archivist working under the pseudonym The Vault Archivist — a deliberate operational choice made to protect source relationships and the integrity of ongoing investigations.
+
+Every registry entry is sourced from primary records and passes editorial review before publication. The archive is maintained independently of any institutional, political, or advertiser relationship.
+
+Read the full editorial standards
+Independent — no institutional funding No advertiser relationships Source protection active Evidence archived on submission Primary sources only Editorial review before publication Pseudonymous for operational security US · Puerto Rico · Philippines
+Source Protection Statement
+The Vault will not voluntarily disclose a source's identity. Tip channels are maintained with source protection as the primary constraint. No submission system is zero-risk — we will not pretend otherwise. Protecting sources is the first consideration in every operational decision we make.
+
+Support The Vault Investigates
+Secure infrastructure, document archival, source communication, legal review, and reporting time all have real costs. Supporters of The Vault sustain the operational capacity that makes this work possible without advertiser dependency or institutional compromise.
+
+Support This Work
+No payment processor yet — see the support page
+
+The Vault Investigates
+vault.povertypimpslayerthevault.io
+Following the money behind the business of poverty — in the United States, Puerto Rico, and the Philippines. Independent. Evidence-first. No access agreements.
+
+Source protection active · Archive initializing
+Last updated: [DATE]
+
+Navigate
+Registry
+Drop a Tip
+Research Access
+About
+Support
+Substack
+Security & Legal
+Source Protection Policy
+Editorial Standards
+Legal Notice (coming)
+PGP Key (coming)
+© 2024 The Vault Investigates · The Vault Archivist · All rights reserved
+
+vault.povertypimpslayerthevault.io
