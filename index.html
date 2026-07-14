@@ -11,22 +11,35 @@
   <meta property="og:url" content="https://vault.povertypimpslayerthevault.io" />
   <meta name="theme-color" content="#0D0B09" />
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
+
+  <!-- ===== SEO / SOCIAL / ALGORITHMIC BLOCK — added 2026-07-14 ===== -->
+  <meta name="keywords" content="investigative journalism, poverty exploitation, charity fraud investigation, NGO accountability, DOJ accountability, Philippines poverty, Puerto Rico investigative reporting, follow the money, accountability journalism" />
+  <link rel="canonical" href="https://vault.povertypimpslayerthevault.io/" />
+  <meta property="og:site_name" content="The Vault Investigates" />
+  <meta property="og:image" content="https://vault.povertypimpslayerthevault.io/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Vault Investigates" />
+  <meta name="twitter:description" content="Following the money behind the business of poverty. US · Puerto Rico · Philippines." />
+  <meta name="twitter:image" content="https://vault.povertypimpslayerthevault.io/og-image.jpg" />
+  <link rel="alternate" hreflang="en" href="https://vault.povertypimpslayerthevault.io/" />
+  <link rel="alternate" hreflang="tl" href="https://vault.povertypimpslayerthevault.io/tl.html" />
+  <link rel="alternate" hreflang="es" href="https://vault.povertypimpslayerthevault.io/es-pr.html" />
+  <link rel="alternate" hreflang="x-default" href="https://vault.povertypimpslayerthevault.io/" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"NewsMediaOrganization","name":"The Vault Investigates","url":"https://vault.povertypimpslayerthevault.io/","description":"Independent investigative journalism registry tracking poverty exploitation across the Philippines, Puerto Rico, and the USA.","foundingDate":"2024","sameAs":["https://thevaultinvestigates.cloud","https://news.thevaultinvestigates.cloud"]}
+  </script>
+  <!-- ===== END SEO BLOCK ===== -->
+
 </head>
 <body>
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- ============================================================
-       ALERT RAIL
-       SWAP: Activate when first DOJ scanner results publish.
-       Uncomment the block below, update copy and link.
-  ============================================================ -->
   <!--
   <div class="alert-rail" role="alert">
     <p class="alert-rail__text container">
@@ -36,7 +49,6 @@
   </div>
   -->
 
-  <!-- ── NAVIGATION ──────────────────────────────────────────── -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="container nav__inner">
       <a href="index.html" class="nav__brand" aria-label="The Vault Investigates — Home">
@@ -47,9 +59,8 @@
       <ul class="nav__links" role="list">
         <li><a href="registry.html" class="nav__link">Registry</a></li>
         <li><a href="about.html" class="nav__link">About</a></li>
-        <li><a href="apply.html" class="nav__link">Research Access</a></li>
+        <li><a href="https://vet.thevaultinvestigates.cloud/apply" class="nav__link" target="_blank" rel="noopener noreferrer">Research Access</a></li>
         <li><a href="support.html" class="nav__link">Support</a></li>
-        <!-- SWAP: Update Substack link with live URL once confirmed -->
         <li><a href="https://thevaultinvestigates.cloud" class="nav__link" target="_blank" rel="noopener noreferrer">Substack</a></li>
       </ul>
 
@@ -70,9 +81,8 @@
     <div id="mobile-menu" class="nav__mobile-menu" role="list">
       <a href="registry.html" class="nav__mobile-link">Registry</a>
       <a href="about.html" class="nav__mobile-link">About</a>
-      <a href="apply.html" class="nav__mobile-link">Research Access</a>
+      <a href="https://vet.thevaultinvestigates.cloud/apply" class="nav__mobile-link" target="_blank" rel="noopener noreferrer">Research Access</a>
       <a href="support.html" class="nav__mobile-link">Support</a>
-      <!-- SWAP: Update with live Substack URL -->
       <a href="https://thevaultinvestigates.cloud" class="nav__mobile-link" target="_blank" rel="noopener noreferrer">Substack</a>
       <a href="drop.html" class="nav__mobile-cta">Drop a Tip</a>
     </div>
@@ -80,9 +90,6 @@
 
   <main id="main-content">
 
-    <!-- ============================================================
-         SECTION 1 — HERO
-    ============================================================ -->
     <section class="hero" aria-labelledby="hero-headline">
       <div class="container">
 
@@ -104,20 +111,16 @@
           <a href="drop.html" class="btn btn--ghost">Drop a Tip</a>
         </div>
 
-        <!-- Registry status bar -->
-        <!-- SWAP: Replace all placeholder values with live counts after DOJ scanner first run -->
         <div class="stat-bar" role="group" aria-label="Registry status">
           <div class="stat-bar__item">
             <div class="stat-bar__value" id="stat-status">ACTIVE</div>
             <div class="stat-bar__label">Registry Status</div>
           </div>
           <div class="stat-bar__item">
-            <!-- SWAP: Replace "SEEDING" with live case count -->
             <div class="stat-bar__value">SEEDING</div>
             <div class="stat-bar__label">Case Files</div>
           </div>
           <div class="stat-bar__item">
-            <!-- SWAP: Replace "PENDING" with live scanner status -->
             <div class="stat-bar__value">PENDING</div>
             <div class="stat-bar__label">DOJ Scanner</div>
           </div>
@@ -134,17 +137,11 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 2 — THE REGISTRY
-         SWAP: Replace placeholder cards with live registry entries
-         once case files publish from github.com/PapiRicanPI/the-vault-investigates-receipts
-    ============================================================ -->
     <section class="section section--bordered" aria-labelledby="registry-heading">
       <div class="container">
 
         <div class="grid-editorial">
 
-          <!-- Left: Registry explanation -->
           <div>
             <div class="section-header">
               <div class="section-header__eyebrow">
@@ -158,23 +155,18 @@
               </p>
             </div>
 
-            <!-- Featured case card -->
-            <!-- SWAP: Replace with first published case file from the Receipts page -->
             <article class="case-card case-card--active" aria-labelledby="featured-case-title">
               <div class="case-card__meta">
                 <span class="badge badge--active">Active</span>
                 <span class="case-card__jurisdiction">🇵🇷 Puerto Rico</span>
               </div>
               <h3 id="featured-case-title" class="case-card__title">
-                <!-- SWAP: Replace with first live case title -->
                 Registry Populating — First Case Files Loading
               </h3>
               <p class="case-card__standfirst">
-                <!-- SWAP: Replace with first live case standfirst -->
                 The DOJ scanner is initializing. The first structured case files will populate this registry once the scanner completes its first run and entries clear editorial review. The infrastructure is in place. The record begins here.
               </p>
 
-              <!-- Evidence badge — SWAP all values post-scanner run -->
               <div class="evidence-badge" role="group" aria-label="Evidence metadata">
                 <div class="evidence-badge__item">
                   <span class="evidence-badge__value">—</span>
@@ -185,7 +177,6 @@
                   <span class="evidence-badge__key">Verification</span>
                 </div>
                 <div class="evidence-badge__item">
-                  <!-- SWAP: Replace with actual date of earliest evidence -->
                   <span class="evidence-badge__value">—</span>
                   <span class="evidence-badge__key">Earliest Record</span>
                 </div>
@@ -193,13 +184,12 @@
 
               <div class="case-card__footer">
                 <span class="case-card__date">File opens when scanner completes</span>
-                <a href="https://github.com/PapiRicanPI/the-vault-investigates-receipts" class="btn btn--text" target="_blank" rel="noopener noreferrer">View the Receipts page</a>
+                <a href="https://vet.thevaultinvestigates.cloud/apply" class="btn btn--text" target="_blank" rel="noopener noreferrer">Request Vetted Access</a>
               </div>
             </article>
 
           </div>
 
-          <!-- Right: Active files sidebar -->
           <aside aria-label="Other files">
             <div class="section-header">
               <div class="section-header__eyebrow">
@@ -208,7 +198,6 @@
               <h2 class="t-h3 section-header__title">Other Active Files</h2>
             </div>
 
-            <!-- SWAP: Replace all three cards with live case entries once available -->
             <div style="display:flex;flex-direction:column;gap:0;">
 
               <article class="case-card case-card--pending" style="margin-bottom:0;border-bottom:none;">
@@ -217,7 +206,6 @@
                   <span class="case-card__jurisdiction">🇺🇸 United States</span>
                 </div>
                 <h3 class="case-card__title" style="font-size:0.95rem;">
-                  <!-- SWAP: Replace with live case title -->
                   DOJ Case File — Loading
                 </h3>
                 <div class="case-card__footer">
@@ -233,7 +221,6 @@
                   <span class="case-card__jurisdiction">🇵🇭 Philippines</span>
                 </div>
                 <h3 class="case-card__title" style="font-size:0.95rem;">
-                  <!-- SWAP: Replace with live case title -->
                   Registry Entry — Loading
                 </h3>
                 <div class="case-card__footer">
@@ -249,7 +236,6 @@
                   <span class="case-card__jurisdiction">🇵🇷 Puerto Rico</span>
                 </div>
                 <h3 class="case-card__title" style="font-size:0.95rem;">
-                  <!-- SWAP: Replace with live case title -->
                   Registry Entry — Loading
                 </h3>
                 <div class="case-card__footer">
@@ -268,9 +254,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 3 — WHAT WE INVESTIGATE
-    ============================================================ -->
     <section class="section section--bordered bg-surface" aria-labelledby="scope-heading">
       <div class="container">
 
@@ -337,9 +320,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 4 — JURISDICTIONS
-    ============================================================ -->
     <section class="section section--bordered" aria-labelledby="jurisdiction-heading">
       <div class="container">
 
@@ -386,10 +366,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 5 — THE RECORD
-         SWAP: Update all stat values once DOJ scanner runs.
-    ============================================================ -->
     <section class="section section--bordered bg-surface" aria-labelledby="archive-heading">
       <div class="container">
 
@@ -415,7 +391,6 @@
           <div>
             <div class="t-label" style="margin-bottom:1rem;">System Status</div>
 
-            <!-- SWAP: Replace all status values post-scanner run -->
             <dl style="display:flex;flex-direction:column;gap:0;border:1px solid var(--vault-border);">
 
               <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.25rem;border-bottom:1px solid var(--vault-border);align-items:center;">
@@ -424,25 +399,21 @@
               </div>
 
               <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.25rem;border-bottom:1px solid var(--vault-border);align-items:center;">
-                <!-- SWAP: Change to badge--active / Active when scanner first run completes -->
                 <dt class="t-mono">DOJ SCANNER</dt>
                 <dd><span class="badge badge--pending">Pending</span></dd>
               </div>
 
               <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.25rem;border-bottom:1px solid var(--vault-border);align-items:center;">
-                <!-- SWAP: Update count post-scanner run -->
                 <dt class="t-mono">CASE FILES</dt>
                 <dd><span class="badge badge--incoming">Seeding</span></dd>
               </div>
 
               <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.25rem;border-bottom:1px solid var(--vault-border);align-items:center;">
-                <!-- SWAP: Change to badge--active / Active once ProtonMail or Signal is confirmed live -->
                 <dt class="t-mono">TIP CHANNEL</dt>
                 <dd><span class="badge badge--incoming">Finalizing</span></dd>
               </div>
 
               <div style="display:grid;grid-template-columns:1fr 1fr;padding:0.85rem 1.25rem;border-bottom:1px solid var(--vault-border);align-items:center;">
-                <!-- SWAP: Change to badge--active / Live when billing resolved and portal restored -->
                 <dt class="t-mono">VETTING PORTAL</dt>
                 <dd><span class="badge badge--pending">Restoring</span></dd>
               </div>
@@ -459,9 +430,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 6 — AUDIENCE ENTRY POINTS
-    ============================================================ -->
     <section class="section section--bordered" aria-labelledby="entry-heading">
       <div class="container">
 
@@ -488,7 +456,7 @@
             <p class="entry-rail__directive">If you are a journalist or researcher —</p>
             <p class="entry-rail__response">
               Research access and collaboration applications are open. The portal is being restored — the bridge email is active in the meantime.
-              <a href="apply.html">Apply for access →</a>
+              <a href="https://vet.thevaultinvestigates.cloud/apply" target="_blank" rel="noopener noreferrer">Apply for access →</a>
             </p>
           </div>
 
@@ -504,7 +472,6 @@
             <p class="entry-rail__directive">If you want the analysis and reporting —</p>
             <p class="entry-rail__response">
               The Vault's investigative writing — following the money, naming the actors, explaining the patterns — publishes on Substack. Hundreds of subscribers follow the work.
-              <!-- SWAP: Confirm Substack URL -->
               <a href="https://thevaultinvestigates.cloud" target="_blank" rel="noopener noreferrer">Read the Substack →</a>
             </p>
           </div>
@@ -522,9 +489,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 7 — TRUST SIGNALS + ABOUT SNIPPET
-    ============================================================ -->
     <section class="section section--bordered bg-surface" aria-labelledby="trust-heading">
       <div class="container">
 
@@ -575,10 +539,6 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         SECTION 8 — SUPPORT RAIL
-         SWAP: Replace btn--ghost link with payment processor CTA when live.
-    ============================================================ -->
     <div class="support-rail" role="complementary" aria-label="Support The Vault">
       <div class="container">
         <div class="support-rail__inner">
@@ -589,7 +549,6 @@
             </p>
           </div>
           <div style="flex-shrink:0;">
-            <!-- SWAP: Replace with payment processor CTA when live -->
             <a href="support.html" class="btn btn--ghost">Support This Work</a>
             <p class="t-mono" style="margin-top:0.6rem;text-align:center;font-size:0.6rem;">
               No payment processor yet — see the support page
@@ -601,7 +560,6 @@
 
   </main>
 
-  <!-- ── FOOTER ──────────────────────────────────────────────── -->
   <footer class="footer" role="contentinfo">
     <div class="container">
 
@@ -615,7 +573,6 @@
           </p>
           <p class="footer__source-note">
             Source protection active · Archive initializing<br>
-            <!-- SWAP: Replace with actual last-updated date -->
             Last updated: [DATE]
           </p>
         </div>
@@ -625,10 +582,9 @@
           <ul class="footer__nav-list" role="list">
             <li><a href="registry.html" class="footer__nav-link">Registry</a></li>
             <li><a href="drop.html" class="footer__nav-link">Drop a Tip</a></li>
-            <li><a href="apply.html" class="footer__nav-link">Research Access</a></li>
+            <li><a href="https://vet.thevaultinvestigates.cloud/apply" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Research Access</a></li>
             <li><a href="about.html" class="footer__nav-link">About</a></li>
             <li><a href="support.html" class="footer__nav-link">Support</a></li>
-            <!-- SWAP: Confirm Substack URL -->
             <li><a href="https://thevaultinvestigates.cloud" class="footer__nav-link" target="_blank" rel="noopener noreferrer">Substack</a></li>
           </ul>
         </nav>
@@ -638,9 +594,7 @@
           <ul class="footer__nav-list" role="list">
             <li><a href="drop.html#source-protection" class="footer__nav-link">Source Protection Policy</a></li>
             <li><a href="about.html#standards" class="footer__nav-link">Editorial Standards</a></li>
-            <!-- SWAP: Add legal notice page in Phase 2 -->
             <li><a href="#" class="footer__nav-link" aria-disabled="true" style="opacity:0.45;pointer-events:none;">Legal Notice (coming)</a></li>
-            <!-- SWAP: Add PGP key link when key is published -->
             <li><a href="#" class="footer__nav-link" aria-disabled="true" style="opacity:0.45;pointer-events:none;">PGP Key (coming)</a></li>
           </ul>
         </div>
