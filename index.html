@@ -1,358 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Vault Investigates – Support the Archive</title>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  :root{--void:#080808;--deep:#0e0e0e;--edge:#1e1e1e;--gold:#c8973a;--gold-light:#e0b355;--gold-dim:#7a5a22;--white:#f0ece4;--muted:#8a8070;--faint:#3a3530;--red:#9b2c1a}
-  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{background:var(--void);color:var(--white);font-family:'Crimson Text',Georgia,serif;overflow-x:hidden}
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,8,8,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--faint);padding:0 2.5rem;height:60px;display:flex;align-items:center;justify-content:space-between}
-  .nav-logo{font-family:'Oswald',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--white);text-decoration:none}
-  .nav-logo span{color:var(--gold)}
-  .nav-right{display:flex;align-items:center;gap:1.5rem}
-  .nav-link{font-family:'Courier Prime',monospace;font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s}
-  .nav-link:hover{color:var(--gold)}
-  .nav-cta{font-family:'Courier Prime',monospace;font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--void);background:var(--gold);padding:0.5rem 1.2rem;text-decoration:none}
-  .nav-cta:hover{background:var(--gold-light)}
-  .hero{min-height:100vh;display:grid;place-items:center;position:relative;overflow:hidden;padding:60px 2rem 0}
-  .vault-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
-  .vault-circle{width:min(90vw,700px);height:min(90vw,700px);border-radius:50%;border:1px solid rgba(200,151,58,0.08);position:absolute}
-  .vault-circle:nth-child(2){transform:scale(0.82);border-color:rgba(200,151,58,0.12)}
-  .vault-circle:nth-child(3){transform:scale(0.65)}
-  .vault-bg::after{content:'';position:absolute;right:-10%;top:30%;width:500px;height:500px;background:radial-gradient(ellipse,rgba(200,151,58,0.12) 0%,transparent 70%)}
-  .hero-inner{position:relative;z-index:2;text-align:center;max-width:900px}
-  .eyebrow{font-family:'Courier Prime',monospace;font-size:0.65rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;opacity:0;animation:rise 0.9s 0.2s ease forwards}
-  .hero-title{font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(3rem,9vw,7rem);line-height:0.95;text-transform:uppercase;color:var(--white);opacity:0;animation:rise 0.9s 0.4s ease forwards}
-  .hero-title .accent{color:var(--gold)}
-  .gold-rule{width:200px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:2rem auto;opacity:0;animation:expand 0.8s 0.7s ease forwards}
-  @keyframes expand{from{opacity:0;transform:scaleX(0)}to{opacity:1;transform:scaleX(1)}}
-  .hero-sub{font-size:clamp(1.1rem,2.5vw,1.4rem);font-style:italic;color:var(--muted);line-height:1.6;max-width:580px;margin:0 auto 3rem;opacity:0;animation:rise 0.9s 0.9s ease forwards}
-  .hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;opacity:0;animation:rise 0.9s 1.1s ease forwards}
-  @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-  .btn{font-family:'Courier Prime',monospace;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;padding:1rem 2.2rem;display:inline-block;transition:all 0.2s;border:none;cursor:pointer}
-  .btn-gold{background:var(--gold);color:var(--void)}
-  .btn-gold:hover{background:var(--gold-light);transform:translateY(-2px)}
-  .btn-outline{background:transparent;color:var(--white);border:1px solid var(--faint)}
-  .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
-  .ticker-wrap{background:var(--red);padding:0.7rem 0;overflow:hidden}
-  .ticker-track{display:flex;width:max-content;animation:ticker 30s linear infinite}
-  @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-  .ticker-item{font-family:'Courier Prime',monospace;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.9);white-space:nowrap;padding:0 3rem}
-  .ticker-item::before{content:'◆ ';color:rgba(255,255,255,0.5)}
-  .section{max-width:960px;margin:0 auto;padding:6rem 2rem}
-  .section-tag{font-family:'Courier Prime',monospace;font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem}
-  .section-tag::after{content:'';height:1px;width:60px;background:var(--gold-dim)}
-  h2{font-family:'Oswald',sans-serif;font-weight:600;font-size:clamp(2rem,5vw,3.5rem);text-transform:uppercase;line-height:1.05;color:var(--white);margin-bottom:2rem}
-  h2 .gold{color:var(--gold)}
-  .story-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-  @media(max-width:700px){.story-layout{grid-template-columns:1fr;gap:2.5rem}nav{padding:0 1rem}.nav-right{gap:0.8rem}.nav-link{display:none}}
-  .story-body{font-size:1.15rem;line-height:1.85;color:#a09080}
-  .story-body p{margin-bottom:1.3rem}
-  .story-body strong{color:var(--white)}
-  .callout{border-left:2px solid var(--gold);padding:1.5rem 1.8rem;background:rgba(200,151,58,0.04);margin-top:1.5rem}
-  .callout p{font-family:'Crimson Text',serif;font-size:1.3rem;font-style:italic;color:var(--white);line-height:1.55}
-  .fact-item{border:1px solid var(--edge);padding:1.8rem 2rem;margin-bottom:-1px;position:relative;background:var(--deep)}
-  .fact-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold-dim)}
-  .fact-num{font-family:'Oswald',sans-serif;font-size:2.5rem;font-weight:700;color:var(--gold);line-height:1;display:block}
-  .fact-label{font-family:'Courier Prime',monospace;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-top:0.4rem;display:block}
-  .fact-sub{font-size:0.9rem;color:var(--muted);margin-top:0.5rem;line-height:1.5}
-  .rule{border:none;border-top:1px solid var(--edge)}
-  .dark-band{background:var(--deep)}
-  .dollar-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--edge);border:1px solid var(--edge);margin-top:2.5rem}
-  .dollar-cell{background:var(--void);padding:2.2rem 2rem}
-  .dollar-amount{font-family:'Oswald',sans-serif;font-size:2rem;font-weight:700;color:var(--gold);display:block}
-  .dollar-period{font-family:'Courier Prime',monospace;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin:0.5rem 0 0.8rem;display:block}
-  .dollar-desc{font-size:0.95rem;color:#7a7060;line-height:1.6}
-  .donate-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--edge);border:1px solid var(--edge);margin-top:2.5rem}
-  .donate-card{background:var(--void);padding:2.5rem 2rem;display:flex;flex-direction:column;transition:background 0.2s}
-  .donate-card:hover{background:#0c0c0c}
-  .donate-card.featured{background:#0c0a06;position:relative}
-  .donate-card.featured::after{content:'★ MOST NEEDED';position:absolute;top:0;left:0;right:0;background:var(--gold);color:var(--void);font-family:'Courier Prime',monospace;font-size:0.6rem;letter-spacing:0.2em;text-align:center;padding:0.4rem}
-  .donate-card.featured .card-top{margin-top:1.5rem}
-  .card-platform{font-family:'Courier Prime',monospace;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-bottom:0.8rem;display:block}
-  .card-amount{font-family:'Oswald',sans-serif;font-size:2.8rem;font-weight:700;color:var(--white);line-height:1}
-  .card-freq{font-family:'Courier Prime',monospace;font-size:0.7rem;color:var(--muted)}
-  .card-name{font-family:'Courier Prime',monospace;font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin:1rem 0 0.6rem;display:block}
-  .card-desc{font-size:0.95rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:1.8rem}
-  .card-btn{font-family:'Courier Prime',monospace;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--white);text-decoration:none;border:1px solid var(--faint);padding:0.7rem 1.2rem;text-align:center;transition:all 0.2s;display:block}
-  .card-btn:hover{border-color:var(--gold);color:var(--gold)}
-  .donate-card.featured .card-btn{background:var(--gold);color:var(--void);border-color:var(--gold)}
-  .donate-card.featured .card-btn:hover{background:var(--gold-light)}
-  .portal-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--edge);border:1px solid var(--edge);margin-top:2.5rem}
-  @media(max-width:600px){.portal-grid{grid-template-columns:1fr}}
-  .portal-card{background:var(--void);padding:3rem 2.5rem;position:relative;overflow:hidden}
-  .portal-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent)}
-  .portal-icon{font-size:2rem;margin-bottom:1.5rem;display:block}
-  .portal-name{font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:600;text-transform:uppercase;color:var(--white);margin-bottom:0.5rem}
-  .portal-name span{color:var(--gold)}
-  .portal-desc{font-size:1rem;color:var(--muted);line-height:1.7;margin-bottom:2rem}
-  .portal-btn{font-family:'Courier Prime',monospace;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid var(--gold-dim);padding:0.7rem 1.5rem;display:inline-block;transition:all 0.2s}
-  .portal-btn:hover{background:var(--gold);color:var(--void);border-color:var(--gold)}
-  .final-cta{position:relative;overflow:hidden;padding:8rem 2rem;text-align:center;background:var(--deep)}
-  .ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(200,151,58,0.07);pointer-events:none;animation:pulse-ring 6s ease-in-out infinite}
-  .ring:nth-child(1){width:300px;height:300px}
-  .ring:nth-child(2){width:500px;height:500px;animation-delay:1s}
-  .ring:nth-child(3){width:700px;height:700px;animation-delay:2s}
-  @keyframes pulse-ring{0%,100%{opacity:0.4}50%{opacity:0.9}}
-  .final-inner{position:relative;z-index:2}
-  .final-count{font-family:'Oswald',sans-serif;font-size:clamp(3rem,10vw,7rem);font-weight:700;color:var(--gold);line-height:1;display:block}
-  .final-label{font-family:'Courier Prime',monospace;font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:1rem}
-  .final-h{font-family:'Oswald',sans-serif;font-size:clamp(1.5rem,4vw,2.8rem);font-weight:600;text-transform:uppercase;color:var(--white);max-width:600px;margin:1rem auto 1.5rem;line-height:1.2}
-  .final-p{font-size:1.1rem;font-style:italic;color:var(--muted);max-width:480px;margin:0 auto 3rem;line-height:1.7}
-  footer{background:#050505;border-top:1px solid #111;padding:2.5rem 2rem;display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center}
-  .footer-logo{font-family:'Oswald',sans-serif;font-weight:700;font-size:1rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--white)}
-  .footer-logo span{color:var(--gold)}
-  .footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center}
-  .footer-links a{font-family:'Courier Prime',monospace;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);text-decoration:none}
-  .footer-links a:hover{color:var(--gold)}
-  .footer-note{font-family:'Courier Prime',monospace;font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--faint)}
-  .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
-  .reveal.visible{opacity:1;transform:translateY(0)}
-</style>
-</head>
-<body>
-<nav>
-  <a href="index.html" class="nav-logo">The <span>Vault</span> Investigates</a>
-  <div class="nav-right">
-    <a href="index.html" class="nav-link">Archive</a>
-    <a href="mailto:tips@thevaultinvestigates.cloud" class="nav-link">Submit Tip</a>
-    <a href="https://vet.thevaultinvestigates.cloud/apply" class="nav-link">Apply for Access</a>
-    <a href="#support-options" class="nav-cta">Support →</a>
-  </div>
-</nav>
+Skip to main content
+The Vault Investigates vault.povertypimpslayerthevault.io
+	•	Registry
+	•	About
+	•	Research Access
+	•	Support
+	•	Substack
+Drop a Tip 
+Registry About Research Access Support Substack Drop a Tip 
+The Vault Investigates 
+Following the money behind the business of poverty. 
+The Vault tracks how governments, NGOs, and political actors profit from the systems built to help the poor — in the United States, Puerto Rico, and the Philippines. The registry is live. The evidence is public record. The analysis follows. 
+Enter the Registry Drop a Tip 
+ACTIVE
+Registry Status
+SEEDING
+Case Files
+PENDING
+DOJ Scanner
+3
+Jurisdictions
+2024
+Est.
+The Registry 
+The record, structured. 
+Every entry begins with a primary source — a DOJ press release, a court filing, a formal inquiry, a confirmed violation record. Entries are extracted, categorized, and reviewed before they publish. Nothing goes on record that cannot be sourced. 
+Active 🇵🇷 Puerto Rico 
+Registry Populating — First Case Files Loading 
+The DOJ scanner is initializing. The first structured case files will populate this registry once the scanner completes its first run and entries clear editorial review. The infrastructure is in place. The record begins here. 
+— Documents 
+PENDING Verification 
+— Earliest Record 
+File opens when scanner completes Request Vetted Access 
+Pipeline 
+Other Active Files
+Incoming 🇺🇸 United States 
+DOJ Case File — Loading 
+Awaiting scanner run 
 
-<div class="hero">
-  <div class="vault-bg">
-    <div class="vault-circle"></div>
-    <div class="vault-circle"></div>
-    <div class="vault-circle"></div>
-  </div>
-  <div class="hero-inner">
-    <p class="eyebrow">Independent Investigative Archive · Disabled U.S. Veteran Run</p>
-    <h1 class="hero-title">Following<br><span class="accent">the money</span><br>behind poverty</h1>
-    <div class="gold-rule"></div>
-    <p class="hero-sub">Documenting how governments, NGOs, and contractors turn human suffering into a business model — Puerto Rico and the United States.</p>
-    <div class="hero-cta">
-      <a href="#support-options" class="btn btn-gold">Keep the archive alive</a>
-      <a href="mailto:tips@thevaultinvestigates.cloud" class="btn btn-outline">Submit a tip</a>
-    </div>
-  </div>
-</div>
+Incoming 🇵🇭 Philippines 
+Registry Entry — Loading 
+Awaiting scanner run 
 
-<div class="ticker-wrap">
-  <div class="ticker-track">
-    <span class="ticker-item">214 subscribers — 0 recurring donors</span>
-    <span class="ticker-item">Zero institutional funding</span>
-    <span class="ticker-item">Funded from a fixed VA disability check</span>
-    <span class="ticker-item">10 donors at $10/month keeps this alive</span>
-    <span class="ticker-item">No ads. No NGO money. No conflicts of interest</span>
-    <span class="ticker-item">214 subscribers — 0 recurring donors</span>
-    <span class="ticker-item">Zero institutional funding</span>
-    <span class="ticker-item">Funded from a fixed VA disability check</span>
-    <span class="ticker-item">10 donors at $10/month keeps this alive</span>
-    <span class="ticker-item">No ads. No NGO money. No conflicts of interest</span>
-  </div>
-</div>
-
-<section class="section reveal">
-  <p class="section-tag">The archivist's story</p>
-  <div class="story-layout">
-    <div>
-      <h2>One veteran.<br><span class="gold">One fixed check.</span><br>One archive.</h2>
-      <div class="callout">
-        <p>"Most investigative projects are funded by the same institutions they scrutinize. This one isn't. It runs on reader support — or it doesn't run."</p>
-      </div>
-    </div>
-    <div class="story-body">
-      <p>I'm <strong>The Vault Archivist</strong> — also known as PovertyPimpSlayer. A disabled U.S. veteran, age 70, on a fixed Social Security and VA disability income. I know the poverty industry from the inside.</p>
-      <p>I relocated abroad so my limited income could stretch far enough to actually <em>investigate</em> instead of just survive. The Vault is the result: public records, contracts, audits, legal filings, and survivor testimonies — connected into timelines.</p>
-      <p>The news cycle moves on. <strong>The Vault doesn't.</strong></p>
-    </div>
-  </div>
-</section>
-
-<hr class="rule">
-
-<div class="dark-band">
-  <section class="section reveal">
-    <p class="section-tag">The reality right now</p>
-    <h2>Numbers that don't <span class="gold">lie</span></h2>
-    <div class="fact-stack">
-      <div class="fact-item">
-        <span class="fact-num">214</span>
-        <span class="fact-label">Total subscribers — 0 donate monthly</span>
-        <p class="fact-sub">People already reading and finding value. The work is real. The support hasn't followed yet.</p>
-      </div>
-      <div class="fact-item">
-        <span class="fact-num">$0</span>
-        <span class="fact-label">Recurring monthly donations</span>
-        <p class="fact-sub">The entire project runs on one fixed-income veteran's personal funds. One crisis stops everything.</p>
-      </div>
-      <div class="fact-item">
-        <span class="fact-num">10</span>
-        <span class="fact-label">Donors needed at $10/month to stabilize</span>
-        <p class="fact-sub">Ten people. That's the whole ask. If 10 of 214 readers gave $10/month, this archive survives.</p>
-      </div>
-    </div>
-  </section>
-</div>
-
-<hr class="rule">
-
-<section class="section reveal">
-  <p class="section-tag">Radical transparency</p>
-  <h2>What your money <span class="gold">actually</span> does</h2>
-  <div class="dollar-grid">
-    <div class="dollar-cell">
-      <span class="dollar-amount">$5</span>
-      <span class="dollar-period">per month</span>
-      <p class="dollar-desc">One week of hosting for TruthDrop.io — the secure document and tip portal.</p>
-    </div>
-    <div class="dollar-cell">
-      <span class="dollar-amount">$10</span>
-      <span class="dollar-period">per month</span>
-      <p class="dollar-desc">Archive storage for one month. Keeps years of case files from disappearing.</p>
-    </div>
-    <div class="dollar-cell">
-      <span class="dollar-amount">$25</span>
-      <span class="dollar-period">per month</span>
-      <p class="dollar-desc">Research tools — court records, document retrieval, public records request fees.</p>
-    </div>
-    <div class="dollar-cell">
-      <span class="dollar-amount">$50</span>
-      <span class="dollar-period">per month</span>
-      <p class="dollar-desc">Rent, utilities, and medications — so investigations aren't stopped by a financial emergency.</p>
-    </div>
-  </div>
-</section>
-
-<hr class="rule">
-
-<div class="dark-band">
-  <section class="section reveal" id="support-options">
-    <p class="section-tag">Every dollar counts</p>
-    <h2>Choose how to <span class="gold">support</span></h2>
-    <div class="donate-grid">
-
-      <div class="donate-card featured">
-        <div class="card-top">
-          <span class="card-platform">Ko-fi · Monthly</span>
-          <span class="card-amount">$10</span><span class="card-freq">/month</span>
-        </div>
-        <span class="card-name">Archivist's Ally</span>
-        <p class="card-desc">Ten people at this level covers a full month of core infrastructure. Be one of ten.</p>
-        <a href="https://ko-fi.com/thevaultinvestigates" class="card-btn">Support $10/month on Ko-fi →</a>
-      </div>
-
-      <div class="donate-card">
-        <div class="card-top">
-          <span class="card-platform">Ko-fi · Monthly</span>
-          <span class="card-amount">$3</span><span class="card-freq">/month</span>
-        </div>
-        <span class="card-name">The Witness</span>
-        <p class="card-desc">You've read the archive. Three dollars says: keep going, don't stop.</p>
-        <a href="https://ko-fi.com/thevaultinvestigates" class="card-btn">Support $3/month on Ko-fi →</a>
-      </div>
-
-      <div class="donate-card">
-        <div class="card-top">
-          <span class="card-platform">Stripe · Secure Checkout</span>
-          <span class="card-amount">Any</span>
-        </div>
-        <span class="card-name">Direct Support</span>
-        <p class="card-desc">Card payment via Stripe's secure checkout. Fast, direct, no third-party account needed.</p>
-        <a href="https://buy.stripe.com/8x26oG9mmgxbeYAeFKdQQ00" class="card-btn">Support via Stripe →</a>
-      </div>
-
-      <div class="donate-card">
-        <div class="card-top">
-          <span class="card-platform">Buy Me a Coffee · One-Time</span>
-          <span class="card-amount">Any</span>
-        </div>
-        <span class="card-name">Quick Support</span>
-        <p class="card-desc">A one-time gesture of support — no account required, takes under a minute.</p>
-        <a href="https://buymeacoffee.com/thevaultinvestigates" class="card-btn">Support on Buy Me a Coffee →</a>
-      </div>
-
-      <div class="donate-card">
-        <div class="card-top">
-          <span class="card-platform">GoFundMe · Campaign</span>
-          <span class="card-amount">Any</span>
-        </div>
-        <span class="card-name">Help Keep The Vault Alive</span>
-        <p class="card-desc">Support the full campaign — help a disabled veteran keep independent investigative journalism running.</p>
-        <a href="https://gofund.me/28b709bf9" class="card-btn">Support on GoFundMe →</a>
-      </div>
-
-    </div>
-  </section>
-</div>
-
-<hr class="rule">
-
-<section class="section reveal">
-  <p class="section-tag">The infrastructure</p>
-  <h2>Two portals. <span class="gold">One mission.</span></h2>
-  <div class="portal-grid">
-    <div class="portal-card">
-      <span class="portal-icon">🔒</span>
-      <div class="portal-name">Truth<span>Drop</span>.io</div>
-      <p class="portal-desc">The public tip portal. Submit documents, leads, and evidence securely and anonymously. All submissions encrypted. Reviewed within 48 hours. Your identity is never stored.</p>
-      <a href="mailto:tips@thevaultinvestigates.cloud" class="portal-btn">Submit a tip →</a>
-    </div>
-    <div class="portal-card">
-      <span class="portal-icon">🗄️</span>
-      <div class="portal-name">Vault <span>Access</span></div>
-      <p class="portal-desc">Researchers, journalists, and investigators can apply for gated access to The Vault's full case file database. Vetted by The Vault Archivist. 3–5 day review.</p>
-      <a href="https://vet.thevaultinvestigates.cloud/apply" class="portal-btn">Apply for access →</a>
-    </div>
-  </div>
-</section>
-
-<div class="final-cta">
-  <div class="ring"></div><div class="ring"></div><div class="ring"></div>
-  <div class="final-inner">
-    <span class="final-label">The ask</span>
-    <span class="final-count">10</span>
-    <h2 class="final-h">Of 214 readers.<br>That's all it takes.</h2>
-    <p class="final-p">If just 10 people gave $10 a month, the investigations continue. The archive survives. The money gets followed.</p>
-    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-      <a href="https://ko-fi.com/thevaultinvestigates" class="btn btn-gold">Be one of ten →</a>
-      <a href="https://buy.stripe.com/8x26oG9mmgxbeYAeFKdQQ00" class="btn btn-outline">Stripe →</a>
-      <a href="mailto:tips@thevaultinvestigates.cloud" class="btn btn-outline">Submit a tip →</a>
-    </div>
-  </div>
-</div>
-
-<footer>
-  <div class="footer-logo">The <span>Vault</span> Investigates</div>
-  <div class="footer-links">
-    <a href="index.html">Archive</a>
-    <a href="mailto:tips@thevaultinvestigates.cloud">Submit a Tip</a>
-    <a href="https://vet.thevaultinvestigates.cloud/apply">Apply for Access</a>
-    <a href="https://ko-fi.com/thevaultinvestigates">Ko-fi</a>
-    <a href="https://buymeacoffee.com/thevaultinvestigates">Buy Me a Coffee</a>
-    <a href="https://buy.stripe.com/8x26oG9mmgxbeYAeFKdQQ00">Stripe</a>
-    <a href="https://gofund.me/28b709bf9">GoFundMe</a>
-  </div>
-  <div style="display:flex;gap:1.5rem;justify-content:center;margin-bottom:1rem;">
-    <a href="https://www.facebook.com/vaultarchivist/" style="font-family:Courier Prime,monospace;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#8a8070;text-decoration:none;" onmouseover="this.style.color='#c8973a'" onmouseout="this.style.color='#8a8070'">Facebook</a>
-    <a href="https://www.instagram.com/businessofpoverty/" style="font-family:Courier Prime,monospace;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:#8a8070;text-decoration:none;" onmouseover="this.style.color='#c8973a'" onmouseout="this.style.color='#8a8070'">Instagram</a>
-    <!-- X/Twitter link removed pending confirmed current handle — old @PovertyVault account was suspended per prior migration -->
-  </div>
-  <p class="footer-note">Independent · Veteran-run · No institutional funding · Following the money</p>
-</footer>
-
-<script>
-  const reveals=document.querySelectorAll('.reveal');
-  const observer=new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
-  },{threshold:0.1});
-  reveals.forEach(el=>observer.observe(el));
-</script>
-</body>
-</html>
+Incoming 🇵🇷 Puerto Rico 
+Registry Entry — Loading 
+Awaiting scanner run 
+View all case files 
+Coverage Scope 
+What The Vault investigates. 
+The business of poverty is not metaphor. It is a measurable, traceable system of incentives — where institutional actors profit from the continuation of the conditions they claim to solve. 
+The Vault follows the paper trail connecting public funding to private outcomes, documents accountability gaps in the systems governments build to serve vulnerable populations, and preserves evidence that powerful actors work to erase. We operate across three jurisdictions where this dynamic is acute, undercovered, and documentable from primary sources. 
+	•	Government Aid Systems How federal and territorial aid money moves from appropriation to distribution — and where it stops reaching intended recipients. 
+	•	NGO and Nonprofit Fund Flows Grant chains, subcontractor relationships, and the structural distance between a dollar allocated and the community it was meant to reach. 
+	•	Housing and Displacement Who controls subsidized housing infrastructure, how displacement is manufactured through policy, and where the financial interests point. 
+	•	Disaster Recovery Money Trails Post-disaster reconstruction funding — FEMA, HUD CDBG-DR, international ODA — and the documented distance between allocation and delivery. 
+	•	Political Actor Accountability Elected and appointed officials whose financial interests intersect with the programs they oversee, fund, or vote on. 
+	•	Evidence Preservation Public-record documentation that agencies remove, reclassify, or quietly delete. The Vault archives it before it disappears. 
+Active Jurisdictions 
+Three territories. One pattern. 
+The exploitation of poverty-relief infrastructure is not unique to any single country. The Vault documents it where the paper trail is densest and the oversight is weakest. 
+🇺🇸
+United States
+Federal aid systems, HUD housing programs, DOJ-tracked violations, congressional appropriations, and the contractor networks that absorb public money before it reaches communities. 
+🇵🇷
+Puerto Rico
+Territorial oversight gaps, post-disaster reconstruction funding (Maria, Fiona), FEMA and HUD-CDBG accountability, and the political networks that control aid distribution on the island. 
+🇵🇭
+Philippines
+Official Development Assistance flows, DSWD program fund diversion, barangay-level accountability gaps, NGO registration pipelines, and electoral positioning through poverty infrastructure. 
+The Record 
+The infrastructure is in place. 
+The Vault's archival infrastructure is built to receive, structure, and preserve evidence as it arrives — extracted from primary sources, verified before publication, and maintained independently of any institutional or advertiser relationship. The record grows with every scanner run, every verified tip, and every published case file. What fills it is the work ahead. 
+Access the Registry 
+System Status
+DATABASE
+Active
+DOJ SCANNER
+Pending
+CASE FILES
+Seeding
+TIP CHANNEL
+Finalizing
+VETTING PORTAL
+Restoring
+ANON CHANNEL
+60–90 Days
+Where to Go 
+Whoever you are, there is a place here. 
+If you have information —
+The Vault accepts tips through a secure channel. Your identity is protected by default. Signal and ProtonMail tip channels are being finalized and will be active shortly. How to reach us → 
+If you are a journalist or researcher —
+Research access and collaboration applications are open. The portal is being restored — the bridge email is active in the meantime. Apply for access → 
+If you are following the registry —
+Case files update as evidence is verified and reviewed. The DOJ scanner populates new entries as it runs. Full analysis publishes on the Substack. Enter the registry → 
+If you want the analysis and reporting —
+The Vault's investigative writing — following the money, naming the actors, explaining the patterns — publishes on Substack. Hundreds of subscribers follow the work. Read the Substack → 
+If you want to sustain this work —
+Independent investigative infrastructure has real costs. No advertisers. No institutional funding. Supporters keep the registry running, the scanner active, and the archive maintained. Support The Vault → 
+About This Publication 
+Independent. Sourced. No access agreements. 
+The Vault Investigates is operated by a single investigative archivist working under the pseudonym The Vault Archivist — a deliberate operational choice made to protect source relationships and the integrity of ongoing investigations. 
+Every registry entry is sourced from primary records and passes editorial review before publication. The archive is maintained independently of any institutional, political, or advertiser relationship. 
+Read the full editorial standards 
+Independent — no institutional funding No advertiser relationships Source protection active Evidence archived on submission Primary sources only Editorial review before publication Pseudonymous for operational security US · Puerto Rico · Philippines 
+Source Protection Statement
+The Vault will not voluntarily disclose a source's identity. Tip channels are maintained with source protection as the primary constraint. No submission system is zero-risk — we will not pretend otherwise. Protecting sources is the first consideration in every operational decision we make. 
+Support The Vault Investigates
+Secure infrastructure, document archival, source communication, legal review, and reporting time all have real costs. Supporters of The Vault sustain the operational capacity that makes this work possible without advertiser dependency or institutional compromise. 
+Support This Work
+No payment processor yet — see the support page 
+The Vault Investigates
+vault.povertypimpslayerthevault.io
+Following the money behind the business of poverty — in the United States, Puerto Rico, and the Philippines. Independent. Evidence-first. No access agreements. 
+Source protection active · Archive initializing Last updated: [DATE] 
+Navigate
+	•	Registry
+	•	Drop a Tip
+	•	Research Access
+	•	About
+	•	Support
+	•	Substack
+Security & Legal
+	•	Source Protection Policy
+	•	Editorial Standards
+	•	Legal Notice (coming)
+	•	PGP Key (coming)
+© 2024 The Vault Investigates · The Vault Archivist · All rights reserved 
+vault.povertypimpslayerthevault.io 
