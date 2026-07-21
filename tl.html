@@ -54,6 +54,14 @@
         <li><a href="https://thevaultinvestigates.cloud" class="nav__link" target="_blank" rel="noopener noreferrer">Substack</a></li>
       </ul>
 
+      <div class="nav__lang" role="group" aria-label="Wika">
+        <a href="index.html" class="nav__lang-link">EN</a>
+        <span class="nav__lang-sep" aria-hidden="true">/</span>
+        <a href="es-pr.html" class="nav__lang-link">ES</a>
+        <span class="nav__lang-sep" aria-hidden="true">/</span>
+        <a href="tl.html" class="nav__lang-link nav__lang-link--active">TL</a>
+      </div>
+
       <a href="drop.html" class="nav__cta">Magbigay ng Tip</a>
 
       <button
@@ -69,6 +77,11 @@
     </div>
 
     <div id="mobile-menu" class="nav__mobile-menu" role="list">
+      <div class="nav__mobile-lang" role="group" aria-label="Wika">
+        <a href="index.html" class="nav__mobile-lang-link">EN</a>
+        <a href="es-pr.html" class="nav__mobile-lang-link">ES</a>
+        <a href="tl.html" class="nav__mobile-lang-link nav__mobile-lang-link--active">TL</a>
+      </div>
       <a href="registry.html" class="nav__mobile-link">Rehistro</a>
       <a href="about.html" class="nav__mobile-link">Tungkol sa Amin</a>
       <a href="https://vet.thevaultinvestigates.cloud/apply" class="nav__mobile-link" target="_blank" rel="noopener noreferrer">Access sa Pananaliksik</a>
@@ -626,10 +639,26 @@
           </div>
           <div style="flex-shrink:0;">
             <a href="support.html" class="btn btn--ghost">Suportahan ang Trabahong Ito</a>
-            <p class="t-mono" style="margin-top:0.6rem;text-align:center;font-size:0.6rem;">
-              Wala pang payment processor — tingnan ang support page
-            </p>
           </div>
+        </div>
+
+        <div class="funding-list" role="list" aria-label="Mga paraan para suportahan">
+          <a href="https://ko-fi.com/thevaultinvestigates" class="funding-list__item" role="listitem" target="_blank" rel="noopener noreferrer">
+            <span class="funding-list__amount">$10/buwan</span>
+            <span class="funding-list__platform">Ko-fi — Archivist's Ally</span>
+          </a>
+          <a href="https://ko-fi.com/thevaultinvestigates" class="funding-list__item" role="listitem" target="_blank" rel="noopener noreferrer">
+            <span class="funding-list__amount">$3/buwan</span>
+            <span class="funding-list__platform">Ko-fi — The Witness</span>
+          </a>
+          <a href="https://buy.stripe.com/8x26oG9mmgxbeYAeFKdQQ00" class="funding-list__item" role="listitem" target="_blank" rel="noopener noreferrer">
+            <span class="funding-list__amount">Kahit magkano</span>
+            <span class="funding-list__platform">Stripe — Secure Checkout</span>
+          </a>
+          <a href="https://buymeacoffee.com/thevaultinvestigates" class="funding-list__item" role="listitem" target="_blank" rel="noopener noreferrer">
+            <span class="funding-list__amount">Kahit magkano</span>
+            <span class="funding-list__platform">Buy Me a Coffee</span>
+          </a>
         </div>
       </div>
     </div>
@@ -651,6 +680,12 @@
             Aktibo ang source protection · Nagsisimula ang archive<br>
             Huling na-update: [DATE]
           </p>
+          <div class="footer__follow" role="group" aria-label="Follow at share">
+            <a href="https://www.facebook.com/vaultarchivist/" class="footer__social-link" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.instagram.com/businessofpoverty/" class="footer__social-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://x.com/povertyvault" class="footer__social-link" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+            <button type="button" class="footer__share-btn" data-share-btn data-copied-label="Nakopya!">I-share ang Page na Ito</button>
+          </div>
         </div>
 
         <nav aria-label="Footer navigation">
@@ -683,7 +718,7 @@
           © 2024 The Vault Investigates · The Vault Archivist · Lahat ng karapatan ay nakalaan
         </p>
         <p class="footer__domain-mark">
-          vault.povertypimpslayerthevault.io
+          vault.povertypimpslayerthevault.io · <a href="warning-tl.html" class="footer__nav-link">Bakit Mahalaga Ito →</a>
         </p>
       </div>
 

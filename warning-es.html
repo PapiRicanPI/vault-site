@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Vault Investigates — Este Archivo Necesita Apoyo</title>
+  <meta name="description" content="The Vault Investigates y TruthDrop.io funcionan con un ingreso fijo y el apoyo de los lectores. Sin ese apoyo, este archivo no puede continuar." />
+  <meta name="robots" content="noindex, follow" />
+  <meta property="og:title" content="The Vault Investigates — Este Archivo Necesita Apoyo" />
+  <meta property="og:description" content="Cero financiamiento institucional. Cero ingresos por publicidad. Si el apoyo de los lectores se detiene, el archivo se detiene." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vault.povertypimpslayerthevault.io/warning-es.html" />
+  <meta name="theme-color" content="#0D0B09" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="alternate" hreflang="en" href="https://vault.povertypimpslayerthevault.io/warning.html" />
+  <link rel="alternate" hreflang="es" href="https://vault.povertypimpslayerthevault.io/warning-es.html" />
+  <link rel="alternate" hreflang="tl" href="https://vault.povertypimpslayerthevault.io/warning-tl.html" />
+</head>
+<body>
+
+  <a href="#warning-content" class="skip-link">Saltar al contenido principal</a>
+
+  <main id="warning-content" class="warning-page">
+    <div class="warning-shell">
+
+      <p class="visually-hidden" role="status">
+        Esta página redirigirá automáticamente a nuestro último reportaje en 25 segundos, a menos que elija una opción abajo, o seleccione "Quedarme en esta página."
+      </p>
+
+      <p class="warning-eyebrow">Un mensaje de The Vault Archivist</p>
+
+      <h1 class="warning-title">Este archivo funciona con un solo ingreso fijo.<br>Ahora mismo, no es suficiente.</h1>
+
+      <p class="warning-body">
+        No hay financiamiento institucional detrás de The Vault Investigates ni de TruthDrop.io. Sin subvenciones. Sin ingresos por publicidad. Sin dinero de ONGs. Solo un veterano discapacitado con un cheque fijo, y los lectores que eligen ayudar a cubrir el costo.
+      </p>
+      <p class="warning-body">
+        Si el apoyo de los lectores se detiene, el archivo se detiene — y el registro de quién se beneficia de la pobreza se apaga.
+      </p>
+
+      <div class="warning-facts" role="list" aria-label="Los números actuales">
+        <span class="warning-facts__item" role="listitem">214 suscriptores — 0 patrocinadores recurrentes</span>
+        <span class="warning-facts__item" role="listitem">Cero financiamiento institucional</span>
+        <span class="warning-facts__item" role="listitem">10 personas a $10/mes mantienen esto vivo</span>
+      </div>
+
+      <div class="warning-actions">
+        <a href="support.html" class="btn btn--primary">Apoyar Este Trabajo Ahora</a>
+        <a href="https://thevaultinvestigates.cloud" target="_blank" rel="noopener noreferrer" class="btn--text">Ahora no — llévame al reportaje</a>
+      </div>
+
+      <div class="warning-countdown-wrap" id="warning-countdown-wrap">
+        Redirigiendo a nuestro último reportaje en <span class="warning-countdown-num" id="warning-countdown-num">25</span>s si no se elige una opción —
+        <button type="button" class="warning-stay-btn" id="warning-stay-btn">quedarme en esta página</button>
+      </div>
+
+      <p class="warning-fineprint">Apoyado por lectores · Independiente · Sin anuncios · Sin financiamiento institucional</p>
+
+      <a href="index.html" class="warning-back">← Volver al archivo</a>
+
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var seconds = 25;
+      var redirectUrl = 'https://thevaultinvestigates.cloud';
+      var numEl = document.getElementById('warning-countdown-num');
+      var wrapEl = document.getElementById('warning-countdown-wrap');
+      var stayBtn = document.getElementById('warning-stay-btn');
+      var cancelled = false;
+      var timerId = null;
+
+      function cancelCountdown() {
+        if (cancelled) return;
+        cancelled = true;
+        if (timerId) clearInterval(timerId);
+        if (wrapEl) wrapEl.style.display = 'none';
+      }
+
+      function tick() {
+        seconds -= 1;
+        if (numEl) numEl.textContent = String(seconds);
+        if (seconds <= 0) {
+          clearInterval(timerId);
+          window.location.href = redirectUrl;
+        }
+      }
+
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReducedMotion) {
+        timerId = setInterval(tick, 1000);
+      } else {
+        cancelCountdown();
+      }
+
+      if (stayBtn) {
+        stayBtn.addEventListener('click', cancelCountdown);
+      }
+
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) cancelCountdown();
+      });
+    })();
+  </script>
+</body>
+</html>

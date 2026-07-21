@@ -135,6 +135,39 @@
     }
   });
 
+  // ── SHARE BUTTON ──────────────────────────────────────────────
+  // Uses the native Web Share sheet on supporting devices (mobile
+  // Safari/Chrome). Falls back to copying the current page URL to
+  // the clipboard and showing a brief "Copied!" confirmation.
+  document.querySelectorAll('[data-share-btn]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var shareData = {
+        title: document.title,
+        url: window.location.href
+      };
+
+      if (navigator.share) {
+        navigator.share(shareData).catch(function () {
+          /* user cancelled the share sheet — no action needed */
+        });
+        return;
+      }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(window.location.href).then(function () {
+          var original = btn.textContent;
+          var copiedLabel = btn.getAttribute('data-copied-label') || 'Copied!';
+          btn.textContent = copiedLabel;
+          btn.setAttribute('data-copied', 'true');
+          setTimeout(function () {
+            btn.textContent = original;
+            btn.removeAttribute('data-copied');
+          }, 2000);
+        });
+      }
+    });
+  });
+
   // ── REDUCED MOTION RESPECT ───────────────────────────────────
   // Check for user preference and disable the badge pulse animation
   // if they prefer reduced motion. CSS handles most of this, but

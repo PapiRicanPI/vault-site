@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Vault Investigates — This Archive Needs Support</title>
+  <meta name="description" content="The Vault Investigates and TruthDrop.io run on one fixed income and reader support. Without it, this archive cannot continue." />
+  <meta name="robots" content="noindex, follow" />
+  <meta property="og:title" content="The Vault Investigates — This Archive Needs Support" />
+  <meta property="og:description" content="Zero institutional funding. Zero ad revenue. If reader support stops, the archive stops." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vault.povertypimpslayerthevault.io/warning.html" />
+  <meta name="theme-color" content="#0D0B09" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="alternate" hreflang="en" href="https://vault.povertypimpslayerthevault.io/warning.html" />
+  <link rel="alternate" hreflang="es" href="https://vault.povertypimpslayerthevault.io/warning-es.html" />
+  <link rel="alternate" hreflang="tl" href="https://vault.povertypimpslayerthevault.io/warning-tl.html" />
+</head>
+<body>
+
+  <a href="#warning-content" class="skip-link">Skip to main content</a>
+
+  <main id="warning-content" class="warning-page">
+    <div class="warning-shell">
+
+      <p class="visually-hidden" role="status">
+        This page will automatically redirect to our latest reporting in 25 seconds unless you choose an option below, or select "Stay on this page."
+      </p>
+
+      <p class="warning-eyebrow">A message from The Vault Archivist</p>
+
+      <h1 class="warning-title">This archive runs on one fixed income.<br>Right now, that's not enough.</h1>
+
+      <p class="warning-body">
+        There is no institutional funding behind The Vault Investigates or TruthDrop.io. No grants. No ad revenue. No NGO money. Just one disabled veteran on a fixed check, and the readers who choose to help carry the cost.
+      </p>
+      <p class="warning-body">
+        If reader support stops, the archive stops — and the record of who profits from poverty goes dark.
+      </p>
+
+      <div class="warning-facts" role="list" aria-label="The current numbers">
+        <span class="warning-facts__item" role="listitem">214 subscribers — 0 recurring supporters</span>
+        <span class="warning-facts__item" role="listitem">Zero institutional funding</span>
+        <span class="warning-facts__item" role="listitem">10 people at $10/month keeps this alive</span>
+      </div>
+
+      <div class="warning-actions">
+        <a href="support.html" class="btn btn--primary">Support This Work Now</a>
+        <a href="https://thevaultinvestigates.cloud" target="_blank" rel="noopener noreferrer" class="btn--text">Not now — take me to the reporting</a>
+      </div>
+
+      <div class="warning-countdown-wrap" id="warning-countdown-wrap">
+        Redirecting to our latest reporting in <span class="warning-countdown-num" id="warning-countdown-num">25</span>s if no choice is made —
+        <button type="button" class="warning-stay-btn" id="warning-stay-btn">stay on this page</button>
+      </div>
+
+      <p class="warning-fineprint">Reader-supported · Independent · No ads · No institutional funding</p>
+
+      <a href="index.html" class="warning-back">← Back to the archive</a>
+
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var seconds = 25;
+      var redirectUrl = 'https://thevaultinvestigates.cloud';
+      var numEl = document.getElementById('warning-countdown-num');
+      var wrapEl = document.getElementById('warning-countdown-wrap');
+      var stayBtn = document.getElementById('warning-stay-btn');
+      var cancelled = false;
+      var timerId = null;
+
+      function cancelCountdown() {
+        if (cancelled) return;
+        cancelled = true;
+        if (timerId) clearInterval(timerId);
+        if (wrapEl) wrapEl.style.display = 'none';
+      }
+
+      function tick() {
+        seconds -= 1;
+        if (numEl) numEl.textContent = String(seconds);
+        if (seconds <= 0) {
+          clearInterval(timerId);
+          window.location.href = redirectUrl;
+        }
+      }
+
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReducedMotion) {
+        timerId = setInterval(tick, 1000);
+      } else {
+        cancelCountdown();
+      }
+
+      if (stayBtn) {
+        stayBtn.addEventListener('click', cancelCountdown);
+      }
+
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) cancelCountdown();
+      });
+    })();
+  </script>
+</body>
+</html>

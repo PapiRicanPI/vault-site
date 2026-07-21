@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Vault Investigates — Kailangan ng Suporta ang Archive na Ito</title>
+  <meta name="description" content="Ang The Vault Investigates at TruthDrop.io ay umaasa sa isang fixed income at sa suporta ng mga mambabasa. Kung mawawala ang suportang ito, hindi na ito magpapatuloy." />
+  <meta name="robots" content="noindex, follow" />
+  <meta property="og:title" content="The Vault Investigates — Kailangan ng Suporta ang Archive na Ito" />
+  <meta property="og:description" content="Walang institutional funding. Walang ad revenue. Kung titigil ang suporta ng mga mambabasa, titigil ang archive." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vault.povertypimpslayerthevault.io/warning-tl.html" />
+  <meta name="theme-color" content="#0D0B09" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="alternate" hreflang="en" href="https://vault.povertypimpslayerthevault.io/warning.html" />
+  <link rel="alternate" hreflang="es" href="https://vault.povertypimpslayerthevault.io/warning-es.html" />
+  <link rel="alternate" hreflang="tl" href="https://vault.povertypimpslayerthevault.io/warning-tl.html" />
+</head>
+<body>
+
+  <a href="#warning-content" class="skip-link">Lumaktaw sa main content</a>
+
+  <main id="warning-content" class="warning-page">
+    <div class="warning-shell">
+
+      <p class="visually-hidden" role="status">
+        Ang page na ito ay awtomatikong mag-redirect sa aming pinakabagong reporting sa loob ng 25 segundo, maliban kung pipili ka ng opsyon sa ibaba, o piliin ang "Manatili sa page na ito."
+      </p>
+
+      <p class="warning-eyebrow">Isang mensahe mula sa The Vault Archivist</p>
+
+      <h1 class="warning-title">Umaasa ang archive na ito sa isang fixed income.<br>Sa ngayon, hindi ito sapat.</h1>
+
+      <p class="warning-body">
+        Walang institutional funding sa likod ng The Vault Investigates o ng TruthDrop.io. Walang grants. Walang ad revenue. Walang pera mula sa NGO. Isang disabled veteran lang na may fixed check, at ang mga mambabasa na pumipili na tumulong sa gastos.
+      </p>
+      <p class="warning-body">
+        Kung titigil ang suporta ng mga mambabasa, titigil ang archive — at ang record ng kung sino ang nakikinabang sa kahirapan ay mawawala.
+      </p>
+
+      <div class="warning-facts" role="list" aria-label="Ang kasalukuyang numero">
+        <span class="warning-facts__item" role="listitem">214 subscribers — 0 recurring supporters</span>
+        <span class="warning-facts__item" role="listitem">Zero institutional funding</span>
+        <span class="warning-facts__item" role="listitem">10 tao sa $10/buwan para mapanatili ito</span>
+      </div>
+
+      <div class="warning-actions">
+        <a href="support.html" class="btn btn--primary">Suportahan Ngayon ang Trabahong Ito</a>
+        <a href="https://thevaultinvestigates.cloud" target="_blank" rel="noopener noreferrer" class="btn--text">Hindi ngayon — dalhin ako sa reporting</a>
+      </div>
+
+      <div class="warning-countdown-wrap" id="warning-countdown-wrap">
+        Mag-redirect sa aming pinakabagong reporting sa <span class="warning-countdown-num" id="warning-countdown-num">25</span>s kung walang pipiliin —
+        <button type="button" class="warning-stay-btn" id="warning-stay-btn">manatili sa page na ito</button>
+      </div>
+
+      <p class="warning-fineprint">Suportado ng mambabasa · Independent · Walang ads · Walang institutional funding</p>
+
+      <a href="index.html" class="warning-back">← Bumalik sa archive</a>
+
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var seconds = 25;
+      var redirectUrl = 'https://thevaultinvestigates.cloud';
+      var numEl = document.getElementById('warning-countdown-num');
+      var wrapEl = document.getElementById('warning-countdown-wrap');
+      var stayBtn = document.getElementById('warning-stay-btn');
+      var cancelled = false;
+      var timerId = null;
+
+      function cancelCountdown() {
+        if (cancelled) return;
+        cancelled = true;
+        if (timerId) clearInterval(timerId);
+        if (wrapEl) wrapEl.style.display = 'none';
+      }
+
+      function tick() {
+        seconds -= 1;
+        if (numEl) numEl.textContent = String(seconds);
+        if (seconds <= 0) {
+          clearInterval(timerId);
+          window.location.href = redirectUrl;
+        }
+      }
+
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReducedMotion) {
+        timerId = setInterval(tick, 1000);
+      } else {
+        cancelCountdown();
+      }
+
+      if (stayBtn) {
+        stayBtn.addEventListener('click', cancelCountdown);
+      }
+
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) cancelCountdown();
+      });
+    })();
+  </script>
+</body>
+</html>

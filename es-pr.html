@@ -54,6 +54,14 @@
         <li><a href="https://thevaultinvestigates.cloud" class="nav__link" target="_blank" rel="noopener noreferrer">Substack</a></li>
       </ul>
 
+      <div class="nav__lang" role="group" aria-label="Idioma">
+        <a href="index.html" class="nav__lang-link">EN</a>
+        <span class="nav__lang-sep" aria-hidden="true">/</span>
+        <a href="es-pr.html" class="nav__lang-link nav__lang-link--active">ES</a>
+        <span class="nav__lang-sep" aria-hidden="true">/</span>
+        <a href="tl.html" class="nav__lang-link">TL</a>
+      </div>
+
       <a href="drop.html" class="nav__cta">Enviar un Dato</a>
 
       <button
@@ -69,6 +77,11 @@
     </div>
 
     <div id="mobile-menu" class="nav__mobile-menu" role="list">
+      <div class="nav__mobile-lang" role="group" aria-label="Idioma">
+        <a href="index.html" class="nav__mobile-lang-link">EN</a>
+        <a href="es-pr.html" class="nav__mobile-lang-link nav__mobile-lang-link--active">ES</a>
+        <a href="tl.html" class="nav__mobile-lang-link">TL</a>
+      </div>
       <a href="registry.html" class="nav__mobile-link">Registro</a>
       <a href="about.html" class="nav__mobile-link">Sobre Nosotros</a>
       <a href="https://vet.thevaultinvestigates.cloud/apply" class="nav__mobile-link" target="_blank" rel="noopener noreferrer">Acceso de Investigación</a>
@@ -626,10 +639,26 @@
           </div>
           <div style="flex-shrink:0;">
             <a href="support.html" class="btn btn--ghost">Apoyar Este Trabajo</a>
-            <p class="t-mono" style="margin-top:0.6rem;text-align:center;font-size:0.6rem;">
-              Aún sin procesador de pagos — ver la página de apoyo
-            </p>
           </div>
+        </div>
+
+        <div class="funding-list" role="list" aria-label="Formas de apoyar">
+          <a href="https://ko-fi.com/thevaultinvestigates" class="funding-list__item" role="listitem" target="_blank" rel="noopener noreferrer">
+            <span class="funding-list__amount">$10/mes</span>
+            <span class="funding-list__platform">Ko-fi — Archivist's Ally</span>
+          </a>
+          <a href="https://ko-fi.com/thevaultinvestigates" class="funding-list__item" role="listitem" target="_blank" rel="noopener noreferrer">
+            <span class="funding-list__amount">$3/mes</span>
+            <span class="funding-list__platform">Ko-fi — The Witness</span>
+          </a>
+          <a href="https://buy.stripe.com/8x26oG9mmgxbeYAeFKdQQ00" class="funding-list__item" role="listitem" target="_blank" rel="noopener noreferrer">
+            <span class="funding-list__amount">Cualquier cantidad</span>
+            <span class="funding-list__platform">Stripe — Pago Seguro</span>
+          </a>
+          <a href="https://buymeacoffee.com/thevaultinvestigates" class="funding-list__item" role="listitem" target="_blank" rel="noopener noreferrer">
+            <span class="funding-list__amount">Cualquier cantidad</span>
+            <span class="funding-list__platform">Buy Me a Coffee</span>
+          </a>
         </div>
       </div>
     </div>
@@ -651,6 +680,12 @@
             Protección de fuentes activa · Archivo inicializando<br>
             Última actualización: [DATE]
           </p>
+          <div class="footer__follow" role="group" aria-label="Seguir y compartir">
+            <a href="https://www.facebook.com/vaultarchivist/" class="footer__social-link" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.instagram.com/businessofpoverty/" class="footer__social-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://x.com/povertyvault" class="footer__social-link" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+            <button type="button" class="footer__share-btn" data-share-btn data-copied-label="¡Copiado!">Compartir Esta Página</button>
+          </div>
         </div>
 
         <nav aria-label="Navegación del pie de página">
@@ -683,7 +718,7 @@
           © 2024 The Vault Investigates · The Vault Archivist · Todos los derechos reservados
         </p>
         <p class="footer__domain-mark">
-          vault.povertypimpslayerthevault.io
+          vault.povertypimpslayerthevault.io · <a href="warning-es.html" class="footer__nav-link">Por qué esto importa →</a>
         </p>
       </div>
 
