@@ -3,21 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Vault Investigates — Evidence Before Exposure</title>
-  <meta name="description" content="The official public entry to The Vault Investigates: independent, dignity-centered investigation into the systems and personalities that profit from poverty and vulnerability." />
+  <title>The Vault Investigates | Poverty Exploitation, Evidence & Accountability</title>
+  <meta name="description" content="Independent investigative journalism documenting poverty exploitation, charity influence, digital media, financial pathways and accountability across the Philippines, Puerto Rico and the United States." />
+  <meta name="keywords" content="poverty exploitation, poverty porn, investigative journalism, charity accountability, influencer accountability, Philippines investigative journalism, Puerto Rico investigative journalism, public records, evidence archive, dignity centered media" />
+  <meta name="author" content="The Vault Investigates" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="theme-color" content="#0D0B09" />
   <link rel="canonical" href="https://vault.povertypimpslayerthevault.io/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="The Vault Investigates" />
-  <meta property="og:title" content="The Vault Investigates — Evidence Before Exposure" />
-  <meta property="og:description" content="Independent investigation, public records, evidence preservation, and dignity-centered reporting across the United States, Puerto Rico, and the Philippines." />
+  <meta property="og:title" content="The Vault Investigates | Evidence Before Exposure" />
+  <meta property="og:description" content="Independent, evidence-first investigation into the systems, industries, platforms and personalities that profit from poverty and vulnerability." />
   <meta property="og:url" content="https://vault.povertypimpslayerthevault.io/" />
   <meta property="og:image" content="https://vault.povertypimpslayerthevault.io/og-image.jpg" />
+  <meta property="og:image:alt" content="The Vault Investigates" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="The Vault Investigates — Evidence Before Exposure" />
-  <meta name="twitter:description" content="Independent investigation into the business of poverty and vulnerability." />
+  <meta name="twitter:title" content="The Vault Investigates | Evidence Before Exposure" />
+  <meta name="twitter:description" content="Investigating poverty exploitation without exploiting poverty." />
   <meta name="twitter:image" content="https://vault.povertypimpslayerthevault.io/og-image.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,646 +31,66 @@
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "NewsMediaOrganization",
-    "name": "The Vault Investigates",
-    "url": "https://vault.povertypimpslayerthevault.io/",
-    "description": "Independent investigative journalism focused on poverty exploitation, public accountability, and dignity-centered evidence work.",
-    "foundingDate": "2024",
-    "sameAs": [
-      "https://thevaultinvestigates.cloud",
-      "https://news.thevaultinvestigates.cloud"
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"NewsMediaOrganization",
+        "@id":"https://vault.povertypimpslayerthevault.io/#organization",
+        "name":"The Vault Investigates",
+        "url":"https://vault.povertypimpslayerthevault.io/",
+        "description":"Independent investigative journalism focused on poverty exploitation, public accountability, evidence preservation and dignity-centered reporting.",
+        "foundingDate":"2024",
+        "areaServed":["United States","Puerto Rico","Philippines"],
+        "sameAs":["https://thevaultinvestigates.cloud/"],
+        "publishingPrinciples":"https://vault.povertypimpslayerthevault.io/warning.html"
+      },
+      {
+        "@type":"WebSite",
+        "@id":"https://vault.povertypimpslayerthevault.io/#website",
+        "url":"https://vault.povertypimpslayerthevault.io/",
+        "name":"The Vault Investigates",
+        "publisher":{"@id":"https://vault.povertypimpslayerthevault.io/#organization"},
+        "inLanguage":"en"
+      },
+      {
+        "@type":"WebPage",
+        "@id":"https://vault.povertypimpslayerthevault.io/#webpage",
+        "url":"https://vault.povertypimpslayerthevault.io/",
+        "name":"The Vault Investigates | Poverty Exploitation, Evidence & Accountability",
+        "isPartOf":{"@id":"https://vault.povertypimpslayerthevault.io/#website"},
+        "about":{"@id":"https://vault.povertypimpslayerthevault.io/#organization"},
+        "description":"Public entry to The Vault Investigates, an independent evidence-first investigative journalism and archival project.",
+        "inLanguage":"en"
+      }
     ]
   }
   </script>
 
   <style>
-    .entry-nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      border-bottom: 1px solid var(--vault-border);
-      background: rgba(13, 11, 9, 0.96);
-      backdrop-filter: blur(14px);
-    }
-
-    .entry-nav__inner {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .entry-brand {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.15;
-    }
-
-    .entry-brand__name {
-      font-family: var(--font-display);
-      font-weight: 700;
-      color: var(--vault-text);
-      font-size: 1.05rem;
-    }
-
-    .entry-brand__sub {
-      margin-top: 0.2rem;
-      font-family: var(--font-mono);
-      color: var(--vault-text-3);
-      font-size: 0.63rem;
-      letter-spacing: 0.05em;
-    }
-
-    .entry-nav__links {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-    }
-
-    .entry-nav__links a {
-      color: var(--vault-text-2);
-      font-size: 0.84rem;
-      font-weight: 600;
-    }
-
-    .entry-nav__links a:hover { color: var(--vault-amber); }
-
-    .entry-nav__cta,
-    .entry-button--primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0.8rem 1.15rem;
-      border: 1px solid var(--vault-gold);
-      background: var(--vault-gold);
-      color: var(--vault-bg) !important;
-      font-family: var(--font-ui);
-      font-size: 0.77rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .entry-nav__cta:hover,
-    .entry-button--primary:hover {
-      background: var(--vault-amber);
-      border-color: var(--vault-amber);
-    }
-
-    .entry-button--secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0.8rem 1.15rem;
-      border: 1px solid var(--vault-bronze);
-      color: var(--vault-text) !important;
-      font-size: 0.77rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .entry-button--secondary:hover {
-      border-color: var(--vault-amber);
-      color: var(--vault-amber) !important;
-    }
-
-    .entry-menu-button {
-      display: none;
-      width: 46px;
-      height: 46px;
-      border: 1px solid var(--vault-border);
-      color: var(--vault-text);
-      font-size: 1.25rem;
-    }
-
-    .entry-mobile {
-      display: none;
-      padding: 0 1.25rem 1rem;
-      border-top: 1px solid var(--vault-border);
-      background: var(--vault-bg);
-    }
-
-    .entry-mobile.is-open { display: grid; }
-
-    .entry-mobile a {
-      padding: 0.9rem 0;
-      border-bottom: 1px solid var(--vault-border);
-      color: var(--vault-text-2);
-      font-weight: 600;
-    }
-
-    .entry-hero {
-      position: relative;
-      overflow: hidden;
-      padding: clamp(5rem, 10vw, 9rem) 0 clamp(4rem, 8vw, 7rem);
-      border-bottom: 1px solid var(--vault-border);
-      background:
-        radial-gradient(circle at 82% 18%, rgba(200,146,42,0.13), transparent 28%),
-        linear-gradient(180deg, rgba(30,26,22,0.45), rgba(13,11,9,0));
-    }
-
-    .entry-hero::after {
-      content: "";
-      position: absolute;
-      inset: auto -15% -40% 40%;
-      height: 420px;
-      border: 1px solid rgba(139,111,71,0.2);
-      transform: rotate(-8deg);
-      pointer-events: none;
-    }
-
-    .entry-kicker {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 1.4rem;
-      color: var(--vault-gold);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .entry-kicker::before {
-      content: "";
-      width: 44px;
-      height: 1px;
-      background: var(--vault-gold);
-    }
-
-    .entry-hero__title {
-      max-width: 980px;
-      margin: 0;
-      font-family: var(--font-display);
-      font-size: clamp(3rem, 7vw, 6.4rem);
-      line-height: 0.98;
-      letter-spacing: -0.035em;
-      color: var(--vault-text);
-    }
-
-    .entry-hero__title em {
-      color: var(--vault-gold);
-      font-weight: 600;
-    }
-
-    .entry-hero__lead {
-      max-width: 760px;
-      margin: 2rem 0 0;
-      color: var(--vault-text-2);
-      font-family: var(--font-editorial);
-      font-size: clamp(1.05rem, 1.8vw, 1.35rem);
-      line-height: 1.8;
-    }
-
-    .entry-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-      margin-top: 2.2rem;
-    }
-
-    .entry-proof {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      margin-top: 4rem;
-      border: 1px solid var(--vault-border);
-      background: rgba(21,18,16,0.72);
-    }
-
-    .entry-proof__item {
-      min-height: 120px;
-      padding: 1.25rem;
-      border-right: 1px solid var(--vault-border);
-    }
-
-    .entry-proof__item:last-child { border-right: 0; }
-
-    .entry-proof__value {
-      color: var(--vault-gold);
-      font-family: var(--font-mono);
-      font-size: 0.84rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .entry-proof__label {
-      margin-top: 0.65rem;
-      color: var(--vault-text-2);
-      font-size: 0.88rem;
-      line-height: 1.55;
-    }
-
-    .entry-section {
-      padding: clamp(4rem, 8vw, 7rem) 0;
-      border-bottom: 1px solid var(--vault-border);
-    }
-
-    .entry-section--surface { background: var(--vault-surface); }
-
-    .entry-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-      gap: clamp(2.5rem, 7vw, 6rem);
-      align-items: start;
-    }
-
-    .entry-section__title {
-      margin: 0;
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      line-height: 1.08;
-      color: var(--vault-text);
-    }
-
-    .entry-section__intro {
-      margin-top: 1.2rem;
-      color: var(--vault-text-2);
-      font-family: var(--font-editorial);
-      line-height: 1.8;
-    }
-
-    .entry-card-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .entry-card {
-      min-height: 210px;
-      padding: 1.5rem;
-      border: 1px solid var(--vault-border);
-      background: var(--vault-elevated);
-    }
-
-    .entry-card__number {
-      color: var(--vault-gold);
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-    }
-
-    .entry-card h3 {
-      margin: 1rem 0 0.65rem;
-      font-family: var(--font-editorial);
-      font-size: 1.05rem;
-      color: var(--vault-text);
-    }
-
-    .entry-card p {
-      color: var(--vault-text-2);
-      font-size: 0.92rem;
-      line-height: 1.7;
-    }
-
-    .entry-not-grid {
-      display: grid;
-      gap: 0.8rem;
-    }
-
-    .entry-not {
-      display: grid;
-      grid-template-columns: 34px 1fr;
-      gap: 1rem;
-      padding: 1.15rem 1.25rem;
-      border: 1px solid var(--vault-border);
-      background: var(--vault-bg);
-    }
-
-    .entry-not__mark {
-      color: var(--vault-red);
-      font-family: var(--font-mono);
-      font-weight: 700;
-    }
-
-    .entry-not strong { color: var(--vault-text); }
-    .entry-not p { margin-top: 0.2rem; color: var(--vault-text-2); font-size: 0.9rem; }
-
-    .entry-standards {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      border: 1px solid var(--vault-border);
-    }
-
-    .entry-standard {
-      padding: 1.5rem;
-      border-right: 1px solid var(--vault-border);
-      background: var(--vault-surface);
-    }
-
-    .entry-standard:last-child { border-right: 0; }
-    .entry-standard h3 { color: var(--vault-gold); font-family: var(--font-mono); font-size: 0.82rem; text-transform: uppercase; }
-    .entry-standard p { margin-top: 0.8rem; color: var(--vault-text-2); font-size: 0.9rem; line-height: 1.7; }
-
-    .entry-roles {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .entry-role {
-      padding: 1.25rem;
-      border-top: 2px solid var(--vault-bronze);
-      background: var(--vault-surface);
-    }
-
-    .entry-role h3 { font-family: var(--font-mono); color: var(--vault-text); font-size: 0.86rem; letter-spacing: 0.08em; }
-    .entry-role p { margin-top: 0.65rem; color: var(--vault-text-2); font-size: 0.88rem; line-height: 1.65; }
-
-    .entry-cta {
-      padding: clamp(4rem, 8vw, 7rem) 0;
-      background:
-        linear-gradient(135deg, rgba(107,58,31,0.28), transparent 45%),
-        var(--vault-elevated);
-      text-align: center;
-    }
-
-    .entry-cta h2 {
-      max-width: 860px;
-      margin: 0 auto;
-      font-family: var(--font-display);
-      font-size: clamp(2.3rem, 5vw, 4.6rem);
-      line-height: 1.05;
-      color: var(--vault-text);
-    }
-
-    .entry-cta p {
-      max-width: 680px;
-      margin: 1.3rem auto 0;
-      color: var(--vault-text-2);
-      font-family: var(--font-editorial);
-      line-height: 1.8;
-    }
-
-    .entry-cta .entry-actions { justify-content: center; }
-
-    .entry-footer {
-      padding: 2.5rem 0;
-      border-top: 1px solid var(--vault-border);
-      background: var(--vault-bg);
-    }
-
-    .entry-footer__inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 2rem;
-      align-items: center;
-      color: var(--vault-text-3);
-      font-size: 0.78rem;
-    }
-
-    .skip-link {
-      position: absolute;
-      left: -9999px;
-      top: 0;
-      z-index: 100;
-      padding: 0.75rem 1rem;
-      background: var(--vault-gold);
-      color: var(--vault-bg);
-    }
-
-    .skip-link:focus { left: 1rem; top: 1rem; }
-
-    @media (max-width: 980px) {
-      .entry-nav__links,
-      .entry-nav__cta { display: none; }
-      .entry-menu-button { display: inline-flex; align-items: center; justify-content: center; }
-      .entry-grid { grid-template-columns: 1fr; }
-      .entry-proof,
-      .entry-standards,
-      .entry-roles { grid-template-columns: repeat(2, 1fr); }
-      .entry-proof__item:nth-child(2) { border-right: 0; }
-      .entry-proof__item:nth-child(-n+2) { border-bottom: 1px solid var(--vault-border); }
-      .entry-standard:nth-child(2) { border-right: 0; }
-      .entry-standard:nth-child(-n+2) { border-bottom: 1px solid var(--vault-border); }
-    }
-
-    @media (max-width: 640px) {
-      .entry-brand__sub { display: none; }
-      .entry-card-grid,
-      .entry-proof,
-      .entry-standards,
-      .entry-roles { grid-template-columns: 1fr; }
-      .entry-proof__item,
-      .entry-standard { border-right: 0; border-bottom: 1px solid var(--vault-border); }
-      .entry-proof__item:last-child,
-      .entry-standard:last-child { border-bottom: 0; }
-      .entry-actions { flex-direction: column; }
-      .entry-button--primary,
-      .entry-button--secondary { width: 100%; }
-      .entry-footer__inner { flex-direction: column; align-items: flex-start; }
-    }
+    .entry-nav{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--vault-border);background:rgba(13,11,9,.96);backdrop-filter:blur(14px)}
+    .entry-nav__inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:1rem}.entry-brand{display:flex;flex-direction:column;line-height:1.15}.entry-brand__name{font-family:var(--font-display);font-weight:700;color:var(--vault-text);font-size:1.05rem}.entry-brand__sub{margin-top:.2rem;font-family:var(--font-mono);color:var(--vault-text-3);font-size:.63rem;letter-spacing:.05em}.entry-nav__links{display:flex;align-items:center;gap:1.1rem}.entry-nav__links a{color:var(--vault-text-2);font-size:.82rem;font-weight:600}.entry-nav__links a:hover{color:var(--vault-amber)}
+    .entry-nav__cta,.entry-button--primary{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:.8rem 1.15rem;border:1px solid var(--vault-gold);background:var(--vault-gold);color:var(--vault-bg)!important;font-family:var(--font-ui);font-size:.77rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.entry-nav__cta:hover,.entry-button--primary:hover{background:var(--vault-amber);border-color:var(--vault-amber)}.entry-button--secondary{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:.8rem 1.15rem;border:1px solid var(--vault-bronze);color:var(--vault-text)!important;font-size:.77rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.entry-button--secondary:hover{border-color:var(--vault-amber);color:var(--vault-amber)!important}.entry-button--text{display:inline-flex;align-items:center;color:var(--vault-gold);font-weight:700;font-size:.84rem}.entry-menu-button{display:none;width:46px;height:46px;border:1px solid var(--vault-border);color:var(--vault-text);font-size:1.25rem}.entry-mobile{display:none;padding:0 1.25rem 1rem;border-top:1px solid var(--vault-border);background:var(--vault-bg)}.entry-mobile.is-open{display:grid}.entry-mobile a{padding:.9rem 0;border-bottom:1px solid var(--vault-border);color:var(--vault-text-2);font-weight:600}
+    .entry-hero{position:relative;overflow:hidden;padding:clamp(5rem,10vw,9rem) 0 clamp(4rem,8vw,7rem);border-bottom:1px solid var(--vault-border);background:radial-gradient(circle at 82% 18%,rgba(200,146,42,.13),transparent 28%),linear-gradient(180deg,rgba(30,26,22,.45),rgba(13,11,9,0))}.entry-kicker{display:flex;align-items:center;gap:.8rem;margin-bottom:1.4rem;color:var(--vault-gold);font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.entry-kicker::before{content:"";width:44px;height:1px;background:var(--vault-gold)}.entry-hero__title{max-width:1050px;margin:0;font-family:var(--font-display);font-size:clamp(3rem,7vw,6.4rem);line-height:.98;letter-spacing:-.035em;color:var(--vault-text)}.entry-hero__title em{color:var(--vault-gold);font-weight:600}.entry-hero__lead{max-width:800px;margin:2rem 0 0;color:var(--vault-text-2);font-family:var(--font-editorial);font-size:clamp(1.05rem,1.8vw,1.35rem);line-height:1.8}.entry-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem}.entry-proof{display:grid;grid-template-columns:repeat(4,1fr);margin-top:4rem;border:1px solid var(--vault-border);background:rgba(21,18,16,.72)}.entry-proof__item{min-height:120px;padding:1.25rem;border-right:1px solid var(--vault-border)}.entry-proof__item:last-child{border-right:0}.entry-proof__value{color:var(--vault-gold);font-family:var(--font-mono);font-size:.84rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.entry-proof__label{margin-top:.65rem;color:var(--vault-text-2);font-size:.88rem;line-height:1.55}
+    .entry-section{padding:clamp(4rem,8vw,7rem) 0;border-bottom:1px solid var(--vault-border)}.entry-section--surface{background:var(--vault-surface)}.entry-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2.5rem,7vw,6rem);align-items:start}.entry-section__title{margin:0;font-family:var(--font-display);font-size:clamp(2rem,4vw,3.5rem);line-height:1.08;color:var(--vault-text)}.entry-section__intro{margin-top:1.2rem;color:var(--vault-text-2);font-family:var(--font-editorial);line-height:1.8}.entry-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.entry-card{min-height:210px;padding:1.5rem;border:1px solid var(--vault-border);background:var(--vault-elevated)}.entry-card__number{color:var(--vault-gold);font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em}.entry-card h3{margin:1rem 0 .65rem;font-family:var(--font-editorial);font-size:1.05rem;color:var(--vault-text)}.entry-card p{color:var(--vault-text-2);font-size:.92rem;line-height:1.7}.entry-not-grid{display:grid;gap:.8rem}.entry-not{display:grid;grid-template-columns:34px 1fr;gap:1rem;padding:1.15rem 1.25rem;border:1px solid var(--vault-border);background:var(--vault-bg)}.entry-not__mark{color:var(--vault-red);font-family:var(--font-mono);font-weight:700}.entry-not strong{color:var(--vault-text)}.entry-not p{margin-top:.2rem;color:var(--vault-text-2);font-size:.9rem}.entry-standards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--vault-border)}.entry-standard{padding:1.5rem;border-right:1px solid var(--vault-border);background:var(--vault-surface)}.entry-standard:last-child{border-right:0}.entry-standard h3{color:var(--vault-gold);font-family:var(--font-mono);font-size:.82rem;text-transform:uppercase}.entry-standard p{margin-top:.8rem;color:var(--vault-text-2);font-size:.9rem;line-height:1.7}
+    .trust-panel{padding:clamp(2rem,5vw,4rem);border:1px solid var(--vault-bronze);background:linear-gradient(135deg,rgba(200,146,42,.08),transparent 48%),var(--vault-elevated)}.trust-panel h3{font-family:var(--font-display);font-size:clamp(1.7rem,3vw,2.7rem);color:var(--vault-text);line-height:1.15}.trust-panel p{margin-top:1rem;color:var(--vault-text-2);line-height:1.8}.trust-rule{margin-top:1.5rem;padding:1.2rem;border-left:3px solid var(--vault-gold);background:var(--vault-bg);color:var(--vault-text);font-family:var(--font-editorial);line-height:1.75}.support-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}.support-card{padding:1.5rem;border:1px solid var(--vault-border);background:var(--vault-bg)}.support-card strong{display:block;color:var(--vault-gold);font-family:var(--font-mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}.support-card p{margin-top:.65rem;color:var(--vault-text-2);font-size:.9rem;line-height:1.65}
+    .entry-roles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:2rem}.entry-role{padding:1.25rem;border-top:2px solid var(--vault-bronze);background:var(--vault-surface)}.entry-role h3{font-family:var(--font-mono);color:var(--vault-text);font-size:.86rem;letter-spacing:.08em}.entry-role p{margin-top:.65rem;color:var(--vault-text-2);font-size:.88rem;line-height:1.65}.entry-cta{padding:clamp(4rem,8vw,7rem) 0;background:linear-gradient(135deg,rgba(107,58,31,.28),transparent 45%),var(--vault-elevated);text-align:center}.entry-cta h2{max-width:900px;margin:0 auto;font-family:var(--font-display);font-size:clamp(2.3rem,5vw,4.6rem);line-height:1.05;color:var(--vault-text)}.entry-cta p{max-width:720px;margin:1.3rem auto 0;color:var(--vault-text-2);font-family:var(--font-editorial);line-height:1.8}.entry-cta .entry-actions{justify-content:center}.entry-footer{padding:2.5rem 0;border-top:1px solid var(--vault-border);background:var(--vault-bg)}.entry-footer__inner{display:flex;justify-content:space-between;gap:2rem;align-items:center;color:var(--vault-text-3);font-size:.78rem}.entry-footer__links{display:flex;gap:1rem;flex-wrap:wrap}.skip-link{position:absolute;left:-9999px;top:0;z-index:100;padding:.75rem 1rem;background:var(--vault-gold);color:var(--vault-bg)}.skip-link:focus{left:1rem;top:1rem}
+    @media(max-width:980px){.entry-nav__links,.entry-nav__cta{display:none}.entry-menu-button{display:inline-flex;align-items:center;justify-content:center}.entry-grid{grid-template-columns:1fr}.entry-proof,.entry-standards,.entry-roles{grid-template-columns:repeat(2,1fr)}.support-grid{grid-template-columns:1fr}.entry-proof__item:nth-child(2){border-right:0}.entry-proof__item:nth-child(-n+2){border-bottom:1px solid var(--vault-border)}.entry-standard:nth-child(2){border-right:0}.entry-standard:nth-child(-n+2){border-bottom:1px solid var(--vault-border)}}
+    @media(max-width:640px){.entry-brand__sub{display:none}.entry-card-grid,.entry-proof,.entry-standards,.entry-roles{grid-template-columns:1fr}.entry-proof__item,.entry-standard{border-right:0;border-bottom:1px solid var(--vault-border)}.entry-proof__item:last-child,.entry-standard:last-child{border-bottom:0}.entry-actions{flex-direction:column}.entry-button--primary,.entry-button--secondary{width:100%}.entry-footer__inner{flex-direction:column;align-items:flex-start}}
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
-  <header class="entry-nav">
-    <div class="container entry-nav__inner">
-      <a class="entry-brand" href="index.html" aria-label="The Vault Investigates home">
-        <span class="entry-brand__name">The Vault Investigates</span>
-        <span class="entry-brand__sub">vault.povertypimpslayerthevault.io</span>
-      </a>
-
-      <nav class="entry-nav__links" aria-label="Primary navigation">
-        <a href="#what-we-do">What We Do</a>
-        <a href="#what-we-are-not">What We Are Not</a>
-        <a href="#standards">Evidence Standard</a>
-        <a href="registry.html">Registry</a>
-        <a href="about.html">About</a>
-      </nav>
-
-      <a class="entry-nav__cta" href="https://vet.thevaultinvestigates.cloud/apply" target="_blank" rel="noopener noreferrer">Apply for Vetted Access</a>
-
-      <button class="entry-menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="entry-mobile-menu">☰</button>
-    </div>
-
-    <nav class="entry-mobile" id="entry-mobile-menu" aria-label="Mobile navigation">
-      <a href="#what-we-do">What We Do</a>
-      <a href="#what-we-are-not">What We Are Not</a>
-      <a href="#standards">Evidence Standard</a>
-      <a href="registry.html">Registry</a>
-      <a href="about.html">About</a>
-      <a href="https://vet.thevaultinvestigates.cloud/apply" target="_blank" rel="noopener noreferrer">Apply for Vetted Access</a>
-    </nav>
-  </header>
-
-  <main id="main-content">
-    <section class="entry-hero" aria-labelledby="entry-title">
-      <div class="container">
-        <div class="entry-kicker">The official public entry</div>
-        <h1 class="entry-hero__title" id="entry-title">Evidence before exposure.<br /><em>Dignity before virality.</em></h1>
-        <p class="entry-hero__lead">The Vault Investigates documents how poverty, vulnerability, charity, influence, and digital media are converted into profit, power, reputation, and control. We follow public records, financial pathways, platform behavior, regulatory gaps, and documented patterns of exploitation.</p>
-
-        <div class="entry-actions">
-          <a class="entry-button--primary" href="https://vet.thevaultinvestigates.cloud/apply" target="_blank" rel="noopener noreferrer">Apply for Vetted Access</a>
-          <a class="entry-button--secondary" href="registry.html">Enter the Public Registry</a>
-        </div>
-
-        <div class="entry-proof" aria-label="Operating principles">
-          <div class="entry-proof__item">
-            <div class="entry-proof__value">Evidence-led</div>
-            <div class="entry-proof__label">Claims are separated from interpretation, inference, and unresolved questions.</div>
-          </div>
-          <div class="entry-proof__item">
-            <div class="entry-proof__value">Dignity-centered</div>
-            <div class="entry-proof__label">Vulnerable people are never treated as props, thumbnails, or content assets.</div>
-          </div>
-          <div class="entry-proof__item">
-            <div class="entry-proof__value">Three regions</div>
-            <div class="entry-proof__label">United States, Puerto Rico, and the Philippines.</div>
-          </div>
-          <div class="entry-proof__item">
-            <div class="entry-proof__value">Vetted access</div>
-            <div class="entry-proof__label">Sensitive work is available only through approved, role-based access.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="entry-section" id="what-we-do" aria-labelledby="what-we-do-title">
-      <div class="container entry-grid">
-        <div>
-          <div class="entry-kicker">What we do</div>
-          <h2 class="entry-section__title" id="what-we-do-title">We build the record before we build the story.</h2>
-          <p class="entry-section__intro">The Vault is a public-interest investigative and archival project. Our work begins with documents, context, and verifiable source material—not outrage, rumor, or spectacle.</p>
-        </div>
-
-        <div class="entry-card-grid">
-          <article class="entry-card">
-            <div class="entry-card__number">01 / PRESERVE</div>
-            <h3>Evidence preservation</h3>
-            <p>We collect and organize public records, platform activity, source documents, archived media, timelines, and supporting material.</p>
-          </article>
-          <article class="entry-card">
-            <div class="entry-card__number">02 / ANALYZE</div>
-            <h3>Investigative analysis</h3>
-            <p>We map relationships, financial pathways, organizational structures, regulatory failures, and repeatable patterns of exploitation.</p>
-          </article>
-          <article class="entry-card">
-            <div class="entry-card__number">03 / VERIFY</div>
-            <h3>Claim discipline</h3>
-            <p>We identify what is documented, what is interpreted, what remains inferential, and what still requires evidence.</p>
-          </article>
-          <article class="entry-card">
-            <div class="entry-card__number">04 / REPORT</div>
-            <h3>Dignity-centered reporting</h3>
-            <p>We report on systems and conduct without reproducing the humiliation, exposure, or exploitation under investigation.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="entry-section entry-section--surface" id="what-we-are-not" aria-labelledby="what-we-are-not-title">
-      <div class="container entry-grid">
-        <div>
-          <div class="entry-kicker">What we are not</div>
-          <h2 class="entry-section__title" id="what-we-are-not-title">Accountability is not vigilantism.</h2>
-          <p class="entry-section__intro">The Vault does not substitute accusation for proof. We do not expose people merely because information is available, and we do not turn vulnerable communities into material for attention.</p>
-        </div>
-
-        <div class="entry-not-grid">
-          <div class="entry-not"><div class="entry-not__mark">×</div><div><strong>Not a gossip forum</strong><p>Rumor, personality conflict, and unsupported claims are not evidence.</p></div></div>
-          <div class="entry-not"><div class="entry-not__mark">×</div><div><strong>Not a harassment or doxxing network</strong><p>Private information, source targeting, threats, and coordinated abuse are prohibited.</p></div></div>
-          <div class="entry-not"><div class="entry-not__mark">×</div><div><strong>Not a public evidence dump</strong><p>Sensitive, unfinished, or identity-bearing material must be controlled and reviewed.</p></div></div>
-          <div class="entry-not"><div class="entry-not__mark">×</div><div><strong>Not a shortcut around due process</strong><p>Public anger does not replace verification, context, legal process, or editorial restraint.</p></div></div>
-          <div class="entry-not"><div class="entry-not__mark">×</div><div><strong>Not another poverty-content machine</strong><p>Children, families, survivors, and struggling communities are not props for engagement.</p></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="entry-section" id="standards" aria-labelledby="standards-title">
-      <div class="container">
-        <div class="entry-kicker">Our investigative standard</div>
-        <h2 class="entry-section__title" id="standards-title">Every conclusion must show its evidentiary weight.</h2>
-        <p class="entry-section__intro" style="max-width:760px; margin-bottom:2rem;">This distinction protects the integrity of the investigation, reduces harm, and makes clear where the record is strong—and where it is not yet complete.</p>
-
-        <div class="entry-standards">
-          <article class="entry-standard"><h3>Documented fact</h3><p>Supported by verifiable records, direct evidence, or reliable primary sources.</p></article>
-          <article class="entry-standard"><h3>Interpretation</h3><p>A reasoned explanation drawn from the available evidence and context.</p></article>
-          <article class="entry-standard"><h3>Inference</h3><p>A plausible conclusion that has not yet been directly established.</p></article>
-          <article class="entry-standard"><h3>Unresolved question</h3><p>A material issue that requires additional evidence or investigation.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="entry-section entry-section--surface" aria-labelledby="dignity-title">
-      <div class="container entry-grid">
-        <div>
-          <div class="entry-kicker">Dignity is part of the standard</div>
-          <h2 class="entry-section__title" id="dignity-title">Investigating exploitation without reproducing it.</h2>
-        </div>
-        <div>
-          <p class="entry-section__intro" style="margin-top:0;">The people appearing in poverty-related content are human beings with rights, histories, families, and futures. They are not thumbnails, case numbers, or instruments for someone else’s reputation.</p>
-          <p class="entry-section__intro">That means protecting identities when appropriate, limiting unnecessary exposure, preserving context, respecting informed participation, and refusing to convert suffering into spectacle.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="entry-section" aria-labelledby="access-title">
-      <div class="container">
-        <div class="entry-kicker">Vetted research environment</div>
-        <h2 class="entry-section__title" id="access-title">Access follows responsibility.</h2>
-        <p class="entry-section__intro" style="max-width:760px;">Approved members receive only the permissions required for their assigned role. A role is not a status symbol. It is a defined level of responsibility, trust, and system access.</p>
-
-        <div class="entry-roles">
-          <article class="entry-role"><h3>ADMIN</h3><p>System administration, access governance, approvals, configuration, and incident authority.</p></article>
-          <article class="entry-role"><h3>CUSTODIAN</h3><p>Evidence management, archival control, workspace oversight, and records integrity.</p></article>
-          <article class="entry-role"><h3>RESEARCHER</h3><p>Authorized investigative research, source development, analysis, and case collaboration.</p></article>
-          <article class="entry-role"><h3>OBSERVER</h3><p>Restricted read-only access to specifically approved materials and workspaces.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="entry-cta" aria-labelledby="apply-title">
-      <div class="container">
-        <div class="entry-kicker" style="justify-content:center;">The controlled entrance</div>
-        <h2 id="apply-title">Join the work through vetted access.</h2>
-        <p>Researchers, students, archivists, journalists, analysts, policy specialists, and careful community observers may apply. Admission is reviewed and is never automatic.</p>
-        <div class="entry-actions">
-          <a class="entry-button--primary" href="https://vet.thevaultinvestigates.cloud/apply" target="_blank" rel="noopener noreferrer">Apply for Vetted Access</a>
-          <a class="entry-button--secondary" href="about.html">Read About The Vault</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="entry-footer">
-    <div class="container entry-footer__inner">
-      <div>© 2026 The Vault Investigates · Public identity: @TheVaultArchivist</div>
-      <div>Evidence before exposure. Dignity before virality.</div>
-    </div>
-  </footer>
-
-  <script>
-    (function () {
-      const button = document.querySelector('.entry-menu-button');
-      const menu = document.getElementById('entry-mobile-menu');
-      if (!button || !menu) return;
-
-      button.addEventListener('click', function () {
-        const open = button.getAttribute('aria-expanded') === 'true';
-        button.setAttribute('aria-expanded', String(!open));
-        button.setAttribute('aria-label', open ? 'Open navigation' : 'Close navigation');
-        button.textContent = open ? '☰' : '×';
-        menu.classList.toggle('is-open', !open);
-      });
-
-      menu.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
-          button.setAttribute('aria-expanded', 'false');
-          button.setAttribute('aria-label', 'Open navigation');
-          button.textContent = '☰';
-          menu.classList.remove('is-open');
-        });
-      });
-    }());
-  </script>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="entry-nav"><div class="container entry-nav__inner"><a class="entry-brand" href="index.html" aria-label="The Vault Investigates home"><span class="entry-brand__name">The Vault Investigates</span><span class="entry-brand__sub">vault.povertypimpslayerthevault.io</span></a><nav class="entry-nav__links" aria-label="Primary navigation"><a href="#mission">Mission</a><a href="#standards">Evidence</a><a href="#independence">Independence</a><a href="registry.html">Registry</a><a href="warning.html">Standards & Disclaimer</a></nav><a class="entry-nav__cta" href="https://thevaultinvestigates.cloud/" target="_blank" rel="noopener noreferrer">Read & Subscribe</a><button class="entry-menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="entry-mobile-menu">☰</button></div><nav class="entry-mobile" id="entry-mobile-menu" aria-label="Mobile navigation"><a href="#mission">Mission</a><a href="#standards">Evidence Standard</a><a href="#independence">Independence</a><a href="registry.html">Public Registry</a><a href="warning.html">Standards & Disclaimer</a><a href="https://thevaultinvestigates.cloud/" target="_blank" rel="noopener noreferrer">Read & Subscribe</a><a href="https://vet.thevaultinvestigates.cloud/apply" target="_blank" rel="noopener noreferrer">Apply for Vetted Access</a></nav></header>
+<main id="main-content">
+<section class="entry-hero" aria-labelledby="entry-title"><div class="container"><div class="entry-kicker">Independent investigative journalism · public evidence archive</div><h1 class="entry-hero__title" id="entry-title">Investigating poverty exploitation <em>without exploiting poverty.</em></h1><p class="entry-hero__lead">The Vault Investigates follows the documents, money, platforms, regulatory gaps, organizations and public conduct behind the business of poverty. Our reporting spans the Philippines, Puerto Rico and the United States—and begins with evidence, not spectacle.</p><div class="entry-actions"><a class="entry-button--primary" href="https://thevaultinvestigates.cloud/" target="_blank" rel="noopener noreferrer">Read the Investigations & Subscribe</a><a class="entry-button--secondary" href="registry.html">Explore the Public Registry</a><a class="entry-button--secondary" href="https://vet.thevaultinvestigates.cloud/apply" target="_blank" rel="noopener noreferrer">Apply for Vetted Access</a></div><div class="entry-proof" aria-label="Operating principles"><div class="entry-proof__item"><div class="entry-proof__value">Evidence first</div><div class="entry-proof__label">Documents and verifiable sources come before conclusions.</div></div><div class="entry-proof__item"><div class="entry-proof__value">Dignity centered</div><div class="entry-proof__label">Vulnerable people are never props, thumbnails or engagement assets.</div></div><div class="entry-proof__item"><div class="entry-proof__value">Independent</div><div class="entry-proof__label">Financial support does not purchase editorial influence or favorable coverage.</div></div><div class="entry-proof__item"><div class="entry-proof__value">Three regions</div><div class="entry-proof__label">Philippines · Puerto Rico · United States.</div></div></div></div></section>
+<section class="entry-section" id="mission" aria-labelledby="mission-title"><div class="container entry-grid"><div><div class="entry-kicker">What we do</div><h2 class="entry-section__title" id="mission-title">We build the record before we build the story.</h2><p class="entry-section__intro">The Vault is an independent public-interest investigative and archival project examining how poverty, vulnerability, charitable activity, influence and digital media can be converted into profit, power, reputation and control.</p></div><div class="entry-card-grid"><article class="entry-card"><div class="entry-card__number">01 / PRESERVE</div><h3>Evidence preservation</h3><p>Public records, source documents, archived media, platform activity, timelines and supporting material are organized for review.</p></article><article class="entry-card"><div class="entry-card__number">02 / FOLLOW</div><h3>Follow the pathways</h3><p>We examine financial flows, organizational relationships, payment systems, public claims, platform incentives and regulatory gaps.</p></article><article class="entry-card"><div class="entry-card__number">03 / VERIFY</div><h3>Claim discipline</h3><p>Documented fact is separated from interpretation, inference and unresolved questions.</p></article><article class="entry-card"><div class="entry-card__number">04 / REPORT</div><h3>Dignity-centered journalism</h3><p>We investigate exploitation without recreating humiliation, voyeurism or unnecessary exposure.</p></article></div></div></section>
+<section class="entry-section entry-section--surface" aria-labelledby="not-title"><div class="container entry-grid"><div><div class="entry-kicker">What we are not</div><h2 class="entry-section__title" id="not-title">Accountability journalism is not a rescue show.</h2><p class="entry-section__intro">Our credibility depends as much on what we refuse to do as on what we publish.</p></div><div class="entry-not-grid"><div class="entry-not"><div class="entry-not__mark">×</div><div><strong>No staged rescues or humiliation for clicks</strong><p>Human hardship is not a production asset.</p></div></div><div class="entry-not"><div class="entry-not__mark">×</div><div><strong>No gossip, doxxing or harassment</strong><p>Rumor, private targeting and coordinated abuse are not investigation.</p></div></div><div class="entry-not"><div class="entry-not__mark">×</div><div><strong>No accusation without evidentiary weight</strong><p>We show what is established, what is inferred and what remains unresolved.</p></div></div><div class="entry-not"><div class="entry-not__mark">×</div><div><strong>No pay-to-praise relationship</strong><p>Financial support never buys favorable reporting, silence or control over an investigation.</p></div></div></div></div></section>
+<section class="entry-section" id="standards" aria-labelledby="standards-title"><div class="container"><div class="entry-kicker">Our evidence standard</div><h2 class="entry-section__title" id="standards-title">Every conclusion should reveal its evidentiary weight.</h2><p class="entry-section__intro" style="max-width:780px;margin-bottom:2rem">Clear labeling protects the record, the subjects of reporting and the reader.</p><div class="entry-standards"><article class="entry-standard"><h3>Documented fact</h3><p>Supported by verifiable records, direct evidence or reliable primary sources.</p></article><article class="entry-standard"><h3>Interpretation</h3><p>A reasoned explanation based on the available evidence and context.</p></article><article class="entry-standard"><h3>Inference</h3><p>A plausible conclusion that has not yet been directly established.</p></article><article class="entry-standard"><h3>Unresolved question</h3><p>A material issue requiring additional evidence or investigation.</p></article></div><div style="margin-top:1.5rem"><a class="entry-button--text" href="warning.html">Read our Standards, Warning & Disclaimer →</a></div></div></section>
+<section class="entry-section entry-section--surface" id="independence" aria-labelledby="independence-title"><div class="container entry-grid"><div><div class="entry-kicker">How the work is sustained</div><h2 class="entry-section__title" id="independence-title">Independent by design. Transparent about the cost.</h2><p class="entry-section__intro">Serious investigative work requires infrastructure. Paid subscriptions help offset the operating tools needed to research, preserve, secure and publish the record.</p></div><div class="trust-panel"><h3>Your subscription helps sustain the infrastructure—not buy the journalism.</h3><p>Research services, archival storage, security systems, publishing infrastructure, evidence preservation and the vetted research portal carry ongoing operating costs.</p><div class="trust-rule">A paid subscription does not purchase editorial influence, favorable coverage, access to an investigation, or control over what we report. Our obligation remains with the evidence.</div><div class="support-grid"><div class="support-card"><strong>Research</strong><p>Public-record discovery, source verification, data organization and investigative tools.</p></div><div class="support-card"><strong>Preservation</strong><p>Archival storage, evidence integrity, backups and documentation.</p></div><div class="support-card"><strong>Infrastructure</strong><p>Publishing, security, web services and the vetted research environment.</p></div></div><div class="entry-actions"><a class="entry-button--primary" href="https://thevaultinvestigates.cloud/" target="_blank" rel="noopener noreferrer">Become a Paid Subscriber</a></div></div></div></section>
+<section class="entry-section" aria-labelledby="access-title"><div class="container"><div class="entry-kicker">Vetted research environment</div><h2 class="entry-section__title" id="access-title">Subscription and research access are different relationships.</h2><p class="entry-section__intro" style="max-width:800px">Readers may subscribe to the publication. Researchers and collaborators seeking controlled workspace access must separately apply and be approved. Paying for the publication does not grant privileged evidence access.</p><div class="entry-roles"><article class="entry-role"><h3>ADMIN</h3><p>System administration, access governance and incident authority.</p></article><article class="entry-role"><h3>CUSTODIAN</h3><p>Evidence management, archival control and records integrity.</p></article><article class="entry-role"><h3>RESEARCHER</h3><p>Authorized investigative research, analysis and case collaboration.</p></article><article class="entry-role"><h3>OBSERVER</h3><p>Restricted read-only access to specifically approved materials.</p></article></div></div></section>
+<section class="entry-cta" aria-labelledby="cta-title"><div class="container"><div class="entry-kicker" style="justify-content:center">Choose your path</div><h2 id="cta-title">Read the work. Sustain the work. Or apply to help build the record.</h2><p>The public reporting remains the front door. Subscription sustains independent publishing. Vetted access protects sensitive collaborative research.</p><div class="entry-actions"><a class="entry-button--primary" href="https://thevaultinvestigates.cloud/" target="_blank" rel="noopener noreferrer">Read & Subscribe</a><a class="entry-button--secondary" href="registry.html">Public Registry</a><a class="entry-button--secondary" href="https://vet.thevaultinvestigates.cloud/apply" target="_blank" rel="noopener noreferrer">Apply for Vetted Access</a></div></div></section>
+</main>
+<footer class="entry-footer"><div class="container entry-footer__inner"><div>© 2026 The Vault Investigates · @TheVaultArchivist</div><div class="entry-footer__links"><a href="warning.html">Standards & Disclaimer</a><a href="about.html">About</a><a href="registry.html">Registry</a></div></div></footer>
+<script>(function(){const button=document.querySelector('.entry-menu-button');const menu=document.getElementById('entry-mobile-menu');if(!button||!menu)return;button.addEventListener('click',function(){const open=button.getAttribute('aria-expanded')==='true';button.setAttribute('aria-expanded',String(!open));button.setAttribute('aria-label',open?'Open navigation':'Close navigation');button.textContent=open?'☰':'×';menu.classList.toggle('is-open',!open)});menu.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','Open navigation');button.textContent='☰';menu.classList.remove('is-open')})})}());</script>
 </body>
 </html>
